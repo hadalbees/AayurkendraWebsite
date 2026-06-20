@@ -1,0 +1,38 @@
+export const treatmentPackages = [
+  {
+    id: "wellness-reset",
+    name: "7-Day Wellness Reset",
+    duration: "7 Days",
+    price: "From ₹18,500",
+    description: "A gentle introduction to Ayurvedic healing with daily Abhyangam, consultation, and personalized diet guidance.",
+    includes: ["Initial Nadi Pariksha", "Daily Abhyangam", "Herbal supplements", "Diet & lifestyle plan"],
+    popular: false,
+  },
+  {
+    id: "panchakarma-detox",
+    name: "14-Day Panchakarma Detox",
+    duration: "14 Days",
+    price: "From ₹45,000",
+    description: "Our flagship detoxification program combining Purvakarma, main procedures, and post-care under medical supervision.",
+    includes: ["Full Panchakarma protocol", "Inpatient care option", "Customized meals", "Follow-up consultation"],
+    popular: true,
+  },
+  {
+    id: "stress-relief",
+    name: "Stress & Sleep Recovery",
+    duration: "10 Days",
+    price: "From ₹28,000",
+    description: "Shirodhara, meditation guidance, and nervine herbs to restore mental calm and restorative sleep.",
+    includes: ["Shirodhara sessions", "Yoga & breathing", "Herbal tonics", "Sleep hygiene coaching"],
+    popular: false,
+  },
+  {
+    id: "womens-wellness",
+    name: "Women's Wellness Program",
+    duration: "14 Days",
+    price: "From ₹35,000",
+    description: "Holistic care for PCOS, fertility support, postpartum recovery, and hormonal balance.",
+    includes: ["Gynec Ayurveda consult", "Uttara Basti if indicated", "Nutrition plan", "Therapeutic massages"],
+    popular: false,
+  },
+] as const;

@@ -1,26 +1,156 @@
 @import "tailwindcss";
 
+@theme {
+  /* Ayur Green — CTAs & highlights only (~10%) */
+  --color-ayur-green: #2E7D32;
+  --color-ayur-green-light: #4CAF50;
+  --color-primary-green: #2E7D32;
+  --color-dark-green: #1B5E20;
+
+  /* Warm Cream — dominant surfaces (~60%) */
+  --color-cream-bg: #F7F3EC;
+  --color-cream-light: #FAF8F4;
+  --color-cream-muted: #F0EBE3;
+  --color-cream-card: #FAF8F4;
+
+  /* Deep Brown — typography & UI (~30%) */
+  --color-brown-dark: #4A3428;
+  --color-brown-accent: #5D4636;
+  --color-brown-muted: #7A6558;
+  --color-brown-light: #9A8578;
+
+  --color-white: #FFFFFF;
+
+  --color-theme-bg: var(--theme-bg);
+  --color-theme-fg: var(--theme-fg);
+  --color-theme-card: var(--theme-card);
+  --color-theme-border: var(--theme-border);
+  --color-theme-muted: var(--theme-muted);
+  --color-theme-accent: var(--theme-accent);
+  --color-theme-brand: var(--theme-brand);
+
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+
+  --radius-card: 1.25rem;
+  --radius-card-lg: 1.5rem;
+  --shadow-card: 0 4px 24px -4px rgba(74, 52, 40, 0.08);
+  --shadow-card-hover: 0 12px 40px -8px rgba(74, 52, 40, 0.14);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --theme-bg: #F7F3EC;
+  --theme-card: #FFFFFF;
+  --theme-surface: #FAF8F4;
+  --theme-fg: #4A3428;
+  --theme-border: rgba(74, 52, 40, 0.1);
+  --theme-muted: #7A6558;
+  --theme-accent: #5D4636;
+  --theme-brand: #2E7D32;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--theme-bg);
+  color: var(--theme-fg);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Premium card */
+.premium-card {
+  background: #ffffff;
+  border: 1px solid rgba(74, 52, 40, 0.08);
+  border-radius: var(--radius-card-lg);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.premium-card:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--theme-brand);
+  color: #ffffff;
+  font-weight: 500;
+  padding: 0.875rem 2rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px -2px rgba(46, 125, 50, 0.35);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #1B5E20;
+  box-shadow: 0 6px 20px -2px rgba(46, 125, 50, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--theme-fg);
+  font-weight: 500;
+  padding: 0.875rem 2rem;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(74, 52, 40, 0.2);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(46, 125, 50, 0.06);
+  border-color: rgba(46, 125, 50, 0.35);
+  color: var(--theme-brand);
+}
+
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--theme-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(74, 52, 40, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-brand);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
 }
