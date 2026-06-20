@@ -77,7 +77,7 @@ export default function Home() {
       <main>
         <Hero onWatchVideo={() => setIsVideoOpen(true)} />
         <Stats />
-        <AboutDoctor isVideoOpen={isVideoOpen} setIsVideoOpen={setIsVideoOpen} />
+        <AboutDoctor />
         <TherapiesPreview />
         <TreatmentPackages />
         <BenefitsAyurveda />
