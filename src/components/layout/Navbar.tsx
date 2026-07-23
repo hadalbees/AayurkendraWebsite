@@ -10,12 +10,11 @@ import Image from "next/image";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
-  { name: "Specialities", href: "/specialities" },
-  { name: "Therapies", href: "/therapies" },
+  { name: "About", href: "/about" },
+  { name: "Treatments", href: "/therapies" },
   { name: "Doctors", href: "/doctors" },
-  { name: "Facilities", href: "/facilities" },
-  { name: "Gallery", href: "/gallery" },
+  { name: "Packages", href: "/#packages" },
+  { name: "Reviews", href: "/#reviews" },
   { name: "Contact", href: "/contact" },
 ];
 

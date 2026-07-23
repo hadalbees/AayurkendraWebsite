@@ -1,23 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
-import { Calendar, Phone, Play, ShieldCheck, X } from "lucide-react";
+import { Calendar, Phone, Play, ShieldCheck } from "lucide-react";
 import { FadeIn } from "../ui/Motion";
 import PlaceholderImage from "../ui/PlaceholderImage";
 import { LeafAccent } from "../ui/LeafPattern";
 import { siteConfig } from "@/lib/site";
 
-export default function Hero({ onWatchVideo }: { onWatchVideo?: () => void } = {}) {
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-
-  const handleWatchVideo = () => {
-    if (onWatchVideo) {
-      onWatchVideo();
-    } else {
-      setIsVideoModalOpen(true);
-    }
-  };
+export default function Hero({ onWatchVideo }: { onWatchVideo: () => void }) {
   return (
     <section className="relative min-h-[92vh] flex items-center pt-24 pb-16 overflow-hidden bg-cream-light">
       <LeafAccent className="-top-10 -left-10 opacity-50" />
@@ -53,7 +43,7 @@ export default function Hero({ onWatchVideo }: { onWatchVideo?: () => void } = {
                 <Calendar className="h-5 w-5" />
                 Book Appointment
               </Link>
-              <button onClick={handleWatchVideo} className="btn-secondary w-full sm:w-auto cursor-pointer">
+              <button onClick={onWatchVideo} className="btn-secondary w-full sm:w-auto cursor-pointer">
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-ayur-green/10">
                   <Play className="h-3.5 w-3.5 fill-ayur-green text-ayur-green ml-0.5" />
                 </span>
@@ -106,43 +96,6 @@ export default function Hero({ onWatchVideo }: { onWatchVideo?: () => void } = {
           </FadeIn>
         </div>
       </div>
-
-      {isVideoModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md p-4 animate-in fade-in duration-200">
-          <div className="relative w-full max-w-4xl bg-brown-dark rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-            <button
-              onClick={() => setIsVideoModalOpen(false)}
-              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-ayur-green transition cursor-pointer"
-            >
-              <X className="w-5 h-5" />
-            </button>
-            <div className="relative aspect-video w-full bg-black">
-              <video
-                controls
-                autoPlay
-                className="w-full h-full object-cover"
-                poster="/images/founder-thumbnail.jpg"
-              >
-                <source src="/videos/founder.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div className="p-5 bg-brown-dark text-white flex justify-between items-center">
-              <div>
-                <h3 className="font-serif text-lg font-semibold">{siteConfig.founder.name}</h3>
-                <p className="text-xs text-cream-light/70">{siteConfig.founder.title}</p>
-              </div>
-              <Link
-                href="/appointment"
-                onClick={() => setIsVideoModalOpen(false)}
-                className="btn-primary text-xs py-2 px-4"
-              >
-                Book Consultation
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }

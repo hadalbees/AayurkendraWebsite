@@ -1,21 +1,16 @@
+"use client";
+
+import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingWidgets from "@/components/ui/FloatingWidgets";
 import Hero from "@/components/sections/Hero";
-import FounderMessage from "@/components/sections/FounderMessage";
 import Stats from "@/components/sections/Stats";
-import AboutPreview from "@/components/sections/AboutPreview";
 import AboutDoctor from "@/components/sections/AboutDoctor";
-import TeamSection from "@/components/sections/TeamSection";
-import SpecialitiesPreview from "@/components/sections/SpecialitiesPreview";
 import TherapiesPreview from "@/components/sections/TherapiesPreview";
 import TreatmentPackages from "@/components/sections/TreatmentPackages";
-import InPatientServices from "@/components/sections/InPatientServices";
-import DailyHealingJourney from "@/components/sections/DailyHealingJourney";
-import FacilitiesPreview from "@/components/sections/FacilitiesPreview";
 import BenefitsAyurveda from "@/components/sections/BenefitsAyurveda";
 import JourneyTimeline from "@/components/sections/JourneyTimeline";
-import TestimonialsPreview from "@/components/sections/TestimonialsPreview";
 import VideoTestimonials from "@/components/sections/VideoTestimonials";
 import GoogleReviews from "@/components/sections/GoogleReviews";
 import FAQSection from "@/components/sections/FAQSection";
@@ -26,6 +21,8 @@ import { FadeIn } from "@/components/ui/Motion";
 import { siteConfig } from "@/lib/site";
 
 export default function Home() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
   const hospitalSchema = {
     "@context": "https://schema.org",
     "@type": ["Hospital", "MedicalClinic"],
@@ -78,21 +75,13 @@ export default function Home() {
       <Navbar />
 
       <main>
-        <Hero />
-        <FounderMessage />
+        <Hero onWatchVideo={() => setIsVideoOpen(true)} />
         <Stats />
-        <AboutPreview />
         <AboutDoctor />
-        <TeamSection />
-        <SpecialitiesPreview />
         <TherapiesPreview />
         <TreatmentPackages />
-        <InPatientServices />
-        <DailyHealingJourney />
-        <FacilitiesPreview />
         <BenefitsAyurveda />
         <JourneyTimeline />
-        <TestimonialsPreview />
         <VideoTestimonials />
         <GoogleReviews />
         <FAQSection />

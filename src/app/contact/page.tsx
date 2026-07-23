@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingWidgets from "@/components/ui/FloatingWidgets";
@@ -13,8 +12,6 @@ import {
   Calendar, 
   MessageSquare,
   CheckCircle,
-  ShieldAlert,
-  Award
 } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import SocialLinks from "@/components/ui/SocialLinks";
@@ -86,11 +83,6 @@ export default function ContactPage() {
         <section className="bg-gradient-to-br from-cream-light to-white text-brown-dark py-20 relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brown-muted via-transparent to-transparent pointer-events-none" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
-            <nav className="flex items-center justify-center space-x-2 text-xs uppercase tracking-wider text-brown-muted mb-2">
-              <Link href="/" className="hover:text-ayur-green transition-colors">Home</Link>
-              <span>/</span>
-              <span className="text-brown-dark">Contact</span>
-            </nav>
             <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-ayur-green font-semibold">
               Reach Out
             </span>
@@ -139,36 +131,11 @@ export default function ContactPage() {
                     <Phone className="h-6 w-6 text-ayur-green shrink-0 mt-1" />
                     <div>
                       <h4 className="font-serif text-base font-bold text-brown-dark">Call Center</h4>
-                      <p className="text-xs sm:text-sm font-light text-brown-muted mt-1 leading-relaxed">
-                        General Inquiries: <a href={siteConfig.phoneHref} className="hover:text-ayur-green transition-colors font-semibold">{siteConfig.phone}</a>
+                      <p className="text-xs sm:text-sm font-light text-brown-dark/75 mt-1 leading-relaxed">
+                        General Inquiries: <a href={siteConfig.phoneHref} className="hover:text-brown-accent transition-colors font-semibold">{siteConfig.phone}</a>
                       </p>
-                    </div>
-                  </StaggerItem>
-
-                  {/* Emergency Contact */}
-                  <StaggerItem className="flex items-start space-x-3.5 bg-red-50 border border-red-200 rounded-2xl p-5 shadow-sm ring-1 ring-red-100">
-                    <ShieldAlert className="h-6 w-6 text-red-600 shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-serif text-base font-bold text-red-800">Emergency Desk</h4>
-                      <p className="text-xs sm:text-sm font-semibold text-red-700 mt-1 leading-relaxed">
-                        Nursing Hotline: <a href="tel:+919150112757" className="hover:underline">{siteConfig.phone}</a>
-                      </p>
-                      <p className="text-[10px] text-red-500 font-light mt-0.5">
-                        Available 24/7 for inpatient emergencies.
-                      </p>
-                    </div>
-                  </StaggerItem>
-
-                  {/* GST Number */}
-                  <StaggerItem className="flex items-start space-x-3.5 bg-white border border-brown-dark/8 rounded-2xl p-5 shadow-sm">
-                    <Award className="h-6 w-6 text-ayur-green shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-serif text-base font-bold text-brown-dark">Tax Registration</h4>
-                      <p className="text-xs sm:text-sm font-light text-brown-muted mt-1">
-                        GSTIN: <span className="font-semibold text-brown-dark">{siteConfig.gstin}</span>
-                      </p>
-                      <p className="text-[10px] text-brown-muted font-light mt-0.5">
-                        Government Registered Speciality Hospital
+                      <p className="text-xs text-red-500 font-semibold mt-1">
+                        Emergency: {siteConfig.phone} (Nursing Desk)
                       </p>
                     </div>
                   </StaggerItem>
