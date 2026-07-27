@@ -121,7 +121,7 @@ export default function Hero({ onWatchVideo }: { onWatchVideo?: () => void } = {
                 controls
                 autoPlay
                 className="w-full h-full object-cover"
-                poster="/images/founder-thumbnail.jpg"
+                poster="/images/founder-thumbnail.png"
               >
                 <source src="/videos/founder.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
