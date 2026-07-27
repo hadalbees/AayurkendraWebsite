@@ -19,7 +19,7 @@ export const doctorsData: Doctor[] = [
     qualification: "B.A.M.S",
     experience: "25+ Years",
     speciality: "Panchakarma, Women's Wellness & Lifestyle Medicine",
-    image: "/images/dr-geetha.jpg",
+    image: "/images/dr-geetha.png",
     bio: [
       "Dr. Geetha Jayapal graduated with a B.A.M.S degree, dedicating her clinical life to standardizing Ayurvedic treatments.",
       "She is a highly respected member of the South Indian Ayurvedic medical community, recognized for her success in treating chronic gynecological disorders and metabolic lifestyle diseases.",

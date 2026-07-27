@@ -46,6 +46,8 @@ export default function Navbar() {
               alt="Logo"
               width={215}
               height={60}
+              priority
+              className="h-auto"
             />
             {/* <span className="text-[9px] uppercase tracking-[0.2em] text-brown-muted font-medium -mt-0.5">
               Ayurveda Speciality Hospital

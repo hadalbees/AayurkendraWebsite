@@ -90,7 +90,7 @@ export default function AboutDoctor() {
                 <video
                   ref={videoRef}
                   className="w-full h-full object-cover"
-                  poster="/images/founder-thumbnail.jpg"
+                  poster="/images/founder-thumbnail.png"
                   controls={isPlaying}
                 >
                   <source
