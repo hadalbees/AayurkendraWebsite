@@ -24,7 +24,7 @@ export const siteConfig = {
   },
   founder: {
     name: "Dr. Geetha Jayapal",
-    title: "Founder & Chief Consultant",
+    title: "Founder & Senior Ayurveda Consultant",
     qualification: "B.A.M.S",
     experience: "25+ Years",
     videoUrl: "", // Replace with YouTube/Vimeo embed URL when available

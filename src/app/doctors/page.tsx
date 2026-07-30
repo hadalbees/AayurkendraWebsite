@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import FloatingWidgets from "@/components/ui/FloatingWidgets";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/Motion";
 import Link from "next/link";
+import Image from "next/image";
 import { doctorsData } from "@/data/doctors";
 import TeamSection from "@/components/sections/TeamSection";
 import { 
@@ -56,6 +57,7 @@ const valuesList = [
 
 export default function DoctorsPage() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const [imgErrors, setImgErrors] = useState<Record<string, boolean>>({});
 
   // Generate dynamic physician schema
   const schemaMarkup = {
@@ -123,11 +125,24 @@ export default function DoctorsPage() {
                 
                 {/* Doctor Visual profile illustration */}
                 <div className="lg:col-span-4 flex flex-col items-center text-center space-y-6 relative overflow-hidden">
-                  <div className="h-56 w-56 rounded-full bg-gradient-to-br from-ayur-green to-brown-dark p-1 flex items-center justify-center shadow-lg relative">
-                    <div className="h-full w-full rounded-full bg-white flex flex-col items-center justify-center text-brown-dark font-serif text-4xl font-bold border-2 border-cream-bg">
-                      {doc.name.split(" ").slice(1).map(n => n[0]).join("")}
-                    </div>
-                    <div className="absolute bottom-1 right-4 h-8 w-8 rounded-full bg-ayur-green border-2 border-white flex items-center justify-center text-white text-sm" title="Verified Professional">
+                  <div className="h-56 w-56 rounded-full bg-gradient-to-br from-ayur-green to-brown-dark p-1 flex items-center justify-center shadow-lg relative overflow-hidden">
+                    {!imgErrors[doc.slug] && doc.image ? (
+                      <div className="h-full w-full rounded-full overflow-hidden relative border-2 border-cream-bg bg-white">
+                        <Image
+                          src={doc.image}
+                          alt={doc.name}
+                          fill
+                          sizes="220px"
+                          className="object-cover"
+                          onError={() => setImgErrors(prev => ({ ...prev, [doc.slug]: true }))}
+                        />
+                      </div>
+                    ) : (
+                      <div className="h-full w-full rounded-full bg-white flex flex-col items-center justify-center text-brown-dark font-serif text-4xl font-bold border-2 border-cream-bg">
+                        {doc.name.split(" ").slice(1).map(n => n[0]).join("")}
+                      </div>
+                    )}
+                    <div className="absolute bottom-1 right-4 h-8 w-8 rounded-full bg-ayur-green border-2 border-white flex items-center justify-center text-white text-sm z-10" title="Verified Professional">
                       ✓
                     </div>
                   </div>

@@ -2,10 +2,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingWidgets from "@/components/ui/FloatingWidgets";
 import Hero from "@/components/sections/Hero";
-import FounderMessage from "@/components/sections/FounderMessage";
 import Stats from "@/components/sections/Stats";
-import AboutPreview from "@/components/sections/AboutPreview";
-import AboutDoctor from "@/components/sections/AboutDoctor";
+import AboutSection from "@/components/sections/AboutSection";
 import TeamSection from "@/components/sections/TeamSection";
 import SpecialitiesPreview from "@/components/sections/SpecialitiesPreview";
 import TherapiesPreview from "@/components/sections/TherapiesPreview";
@@ -16,7 +14,6 @@ import FacilitiesPreview from "@/components/sections/FacilitiesPreview";
 import BenefitsAyurveda from "@/components/sections/BenefitsAyurveda";
 import JourneyTimeline from "@/components/sections/JourneyTimeline";
 import TestimonialsPreview from "@/components/sections/TestimonialsPreview";
-import VideoTestimonials from "@/components/sections/VideoTestimonials";
 import GoogleReviews from "@/components/sections/GoogleReviews";
 import FAQSection from "@/components/sections/FAQSection";
 import AppointmentForm from "@/components/sections/AppointmentForm";
@@ -79,10 +76,8 @@ export default function Home() {
 
       <main>
         <Hero />
-        <FounderMessage />
         <Stats />
-        <AboutPreview />
-        <AboutDoctor />
+        <AboutSection />
         <TeamSection />
         <SpecialitiesPreview />
         <TherapiesPreview />
@@ -93,7 +88,6 @@ export default function Home() {
         <BenefitsAyurveda />
         <JourneyTimeline />
         <TestimonialsPreview />
-        <VideoTestimonials />
         <GoogleReviews />
         <FAQSection />
 

@@ -45,15 +45,15 @@ export default function HMSPortalPage() {
               <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-ayur-green font-semibold">
                 Hospital System Architecture
               </span>
-              <h1 className="font-serif text-3.5xl font-bold leading-tight tracking-tight text-white">
+              <h1 className="font-serif text-3.5xl font-bold leading-tight tracking-tight text-brown-dark">
                 Aayur Kendra HMS Hub
               </h1>
-              <p className="text-xs sm:text-sm font-light text-cream-bg/75 leading-relaxed">
+              <p className="text-xs sm:text-sm font-light text-brown-muted leading-relaxed">
                 Future Hospital Management System (HMS) Integration Architecture Preview.
               </p>
             </div>
             
-            <div className="inline-flex items-center space-x-2 bg-white/10 border border-white/15 px-4 py-2.5 rounded-2xl text-xs font-semibold">
+            <div className="inline-flex items-center space-x-2 bg-brown-dark/5 border border-brown-dark/10 px-4 py-2.5 rounded-2xl text-xs font-semibold">
               <ShieldCheck className="h-4.5 w-4.5 text-brown-accent shrink-0" />
               <span>Future Integration Ready</span>
             </div>

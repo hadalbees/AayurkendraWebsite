@@ -126,6 +126,7 @@ function FormContent() {
                   className={`w-full bg-cream-light border px-4 py-3.5 rounded-xl text-sm outline-none transition-colors ${
                     errors.name ? "border-red-500" : "border-brown-dark/10 focus:border-ayur-green focus:ring-2 focus:ring-ayur-green/10"
                   }`}
+                  suppressHydrationWarning={true}
                 />
                 {errors.name && (
                   <p className="text-xs text-red-500 flex items-center space-x-1 mt-1">
@@ -151,6 +152,7 @@ function FormContent() {
                   className={`w-full bg-cream-light border px-4 py-3.5 rounded-xl text-sm outline-none transition-colors ${
                     errors.phone ? "border-red-500" : "border-brown-dark/10 focus:border-ayur-green focus:ring-2 focus:ring-ayur-green/10"
                   }`}
+                  suppressHydrationWarning={true}
                 />
                 {errors.phone && (
                   <p className="text-xs text-red-500 flex items-center space-x-1 mt-1">
@@ -176,6 +178,7 @@ function FormContent() {
                   className={`w-full bg-cream-light border px-4 py-3.5 rounded-xl text-sm outline-none transition-colors ${
                     errors.email ? "border-red-500" : "border-brown-dark/10 focus:border-ayur-green focus:ring-2 focus:ring-ayur-green/10"
                   }`}
+                  suppressHydrationWarning={true}
                 />
                 {errors.email && (
                   <p className="text-xs text-red-500 flex items-center space-x-1 mt-1">
@@ -199,6 +202,7 @@ function FormContent() {
                   className={`w-full bg-cream-light border px-4 py-3.5 rounded-xl text-sm outline-none transition-colors ${
                     errors.treatment ? "border-red-500" : "border-brown-dark/10 focus:border-ayur-green focus:ring-2 focus:ring-ayur-green/10"
                   }`}
+                  suppressHydrationWarning={true}
                 >
                   <option value="">Select Treatment</option>
                   {treatmentOptions.map((group) => (
@@ -235,6 +239,7 @@ function FormContent() {
                 className={`w-full bg-cream-light border px-4 py-3.5 rounded-xl text-sm outline-none transition-colors ${
                   errors.date ? "border-red-500" : "border-brown-dark/10 focus:border-ayur-green focus:ring-2 focus:ring-ayur-green/10"
                 }`}
+                suppressHydrationWarning={true}
               />
               {errors.date && (
                 <p className="text-xs text-red-500 flex items-center space-x-1 mt-1">
@@ -267,6 +272,7 @@ function FormContent() {
                 type="submit"
                 disabled={isSubmitting}
                 className="btn-primary w-full sm:w-auto disabled:opacity-50 cursor-pointer"
+                suppressHydrationWarning={true}
               >
                 <span>{isSubmitting ? "Registering..." : "Book Appointment"}</span>
               </button>
