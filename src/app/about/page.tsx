@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingWidgets from "@/components/ui/FloatingWidgets";
@@ -32,6 +33,11 @@ export default function AboutPage() {
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brown-muted via-transparent to-transparent pointer-events-none" />
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+            <nav className="flex items-center justify-center space-x-2 text-xs uppercase tracking-wider text-brown-muted mb-2">
+              <Link href="/" className="hover:text-ayur-green transition-colors">Home</Link>
+              <span>/</span>
+              <span className="text-brown-dark">About Us</span>
+            </nav>
             <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-ayur-green font-semibold">
               Who We Are
             </span>

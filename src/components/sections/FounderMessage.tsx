@@ -1,17 +1,21 @@
 "use client";
 
+import { useState } from "react";
 import { Play, X, Award, GraduationCap, HeartHandshake } from "lucide-react";
 import { FadeIn } from "../ui/Motion";
 import PlaceholderImage from "../ui/PlaceholderImage";
 import { siteConfig } from "@/lib/site";
 
 export default function FounderMessage({
-  isVideoOpen,
-  setIsVideoOpen,
+  isVideoOpen: propIsVideoOpen,
+  setIsVideoOpen: propSetIsVideoOpen,
 }: {
-  isVideoOpen: boolean;
-  setIsVideoOpen: (val: boolean) => void;
-}) {
+  isVideoOpen?: boolean;
+  setIsVideoOpen?: (val: boolean) => void;
+} = {}) {
+  const [localIsVideoOpen, setLocalIsVideoOpen] = useState(false);
+  const isVideoOpen = propIsVideoOpen !== undefined ? propIsVideoOpen : localIsVideoOpen;
+  const setIsVideoOpen = propSetIsVideoOpen !== undefined ? propSetIsVideoOpen : setLocalIsVideoOpen;
   const hasVideo = Boolean(siteConfig.founder.videoUrl);
 
   return (
@@ -131,21 +135,12 @@ export default function FounderMessage({
                 allowFullScreen
               />
             ) : (
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6">
-                <span className="text-brown-accent uppercase tracking-[0.2em] text-xs font-bold mb-2">
-                  {siteConfig.shortName}
-                </span>
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold mb-3">
-                  A Message from {siteConfig.founder.name}
-                </h3>
-                <p className="text-sm text-cream-bg/75 font-light max-w-lg mb-6 leading-relaxed">
-                  Video embed placeholder — add your YouTube or Vimeo URL in <code className="text-brown-accent text-xs">src/lib/site.ts</code> under <code className="text-brown-accent text-xs">founder.videoUrl</code>.
-                </p>
-                <div className="border border-white/25 px-6 py-4 rounded-xl flex items-center space-x-3 bg-white/5">
-                  <Play className="h-5 w-5 text-brown-accent shrink-0 fill-white" />
-                  <span className="text-xs text-cream-bg/95 font-semibold">Ready for video embed</span>
-                </div>
-              </div>
+              <video
+                src="/videos/founder.mp4"
+                className="absolute inset-0 w-full h-full object-contain"
+                controls
+                autoPlay
+              />
             )}
           </div>
         </div>

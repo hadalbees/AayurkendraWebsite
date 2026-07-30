@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Aayur Kendra Ayurveda Speciality Hospital, Hosur",
+  title: "Contact Us | Aayur Kendra Ayurveda Speciality Hospital",
   description:
-    "Contact Aayur Kendra Hospital at +91 91501 12757. Visit us at Thally Road, Hosur. Book consultations, inquire about treatments, or get directions.",
+    "Get in touch with Aayur Kendra Speciality Hospital in Hosur. Find our address, phone number, working hours, GST details, emergency nursing desk, and map directions.",
   alternates: { canonical: "/contact" },
 };
 
