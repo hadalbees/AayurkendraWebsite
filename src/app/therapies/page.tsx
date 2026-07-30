@@ -40,7 +40,7 @@ export default function TherapiesPage() {
             {/* Highlighted Panchakarma block */}
             {flagship && (
               <FadeIn delay={0.1} className="mb-16">
-                <div className="bg-gradient-to-br from-cream-light to-white text-brown-dark rounded-3xl p-6 sm:p-10 shadow-xl border border-white/5 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative overflow-hidden group">
+                <div className="bg-gradient-to-br from-cream-light to-white text-brown-dark rounded-3xl p-6 sm:p-10 shadow-xl border border-brown-dark/5 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative overflow-hidden group">
                   <div className="absolute top-0 right-0 -translate-y-10 translate-x-10 h-40 w-40 bg-white/5 rounded-full pointer-events-none" />
                   
                   <div className="lg:col-span-7 space-y-6">
@@ -50,37 +50,37 @@ export default function TherapiesPage() {
                     </div>
                     
                     <div className="space-y-2">
-                      <h3 className="font-serif text-3.5xl font-bold text-white group-hover:text-brown-accent transition-colors">
+                      <h3 className="font-serif text-3.5xl font-bold text-brown-dark group-hover:text-ayur-green transition-colors">
                         {flagship.title}
                       </h3>
                       <p className="font-serif italic text-sm text-brown-accent">
                         "{flagship.tagline}"
                       </p>
-                      <p className="text-sm font-light text-cream-bg/85 leading-relaxed">
+                      <p className="text-sm font-light text-brown-muted leading-relaxed">
                         {flagship.overview}
                       </p>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {flagship.benefits.slice(0, 4).map((benefit, idx) => (
-                        <div key={idx} className="flex items-start space-x-2.5 text-xs text-cream-bg/90">
-                          <CheckCircle2 className="h-4.5 w-4.5 text-brown-accent shrink-0 mt-0.5" />
+                        <div key={idx} className="flex items-start space-x-2.5 text-xs text-brown-muted">
+                          <CheckCircle2 className="h-4.5 w-4.5 text-ayur-green shrink-0 mt-0.5" />
                           <span className="font-light">{benefit}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="lg:col-span-5 bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col justify-between space-y-6">
-                    <div className="flex items-center justify-between text-sm border-b border-white/10 pb-4">
-                      <span className="text-cream-bg/70 font-light">Procedure Duration</span>
-                      <div className="flex items-center space-x-1.5 font-bold text-brown-accent">
+                  <div className="lg:col-span-5 bg-brown-dark/5 border border-brown-dark/10 rounded-2xl p-6 flex flex-col justify-between space-y-6">
+                    <div className="flex items-center justify-between text-sm border-b border-brown-dark/10 pb-4">
+                      <span className="text-brown-muted font-light">Procedure Duration</span>
+                      <div className="flex items-center space-x-1.5 font-bold text-ayur-green">
                         <Clock className="h-4.5 w-4.5" />
                         <span>{flagship.duration}</span>
                       </div>
                     </div>
 
-                    <p className="text-xs text-cream-bg/65 font-light leading-relaxed">
+                    <p className="text-xs text-brown-muted font-light leading-relaxed">
                       Deep-seated cellular detox. Restores Agni metabolism and purges system impurities. Guided directly by Dr. Geetha Jayapal.
                     </p>
 
@@ -93,7 +93,7 @@ export default function TherapiesPage() {
                       </Link>
                       <Link
                         href={`/appointment?treatment=${flagship.slug}`}
-                        className="w-full text-center bg-white/10 hover:bg-white/15 text-white font-medium px-5 py-3 rounded-full text-xs uppercase tracking-wider border border-white/10 transition-all cursor-pointer"
+                        className="w-full text-center bg-white hover:bg-cream-light text-brown-dark font-medium px-5 py-3 rounded-full text-xs uppercase tracking-wider border border-brown-dark/15 hover:border-brown-dark/25 transition-all cursor-pointer"
                       >
                         Book Consultation
                       </Link>

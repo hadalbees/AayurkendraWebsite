@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { Calendar, Phone, Play, ShieldCheck, X } from "lucide-react";
 import { FadeIn } from "../ui/Motion";
-import PlaceholderImage from "../ui/PlaceholderImage";
 import { LeafAccent } from "../ui/LeafPattern";
 import { siteConfig } from "@/lib/site";
 
@@ -75,18 +74,21 @@ export default function Hero({ onWatchVideo }: { onWatchVideo: () => void }) {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-br from-ayur-green/5 to-brown-dark/5 rounded-[2rem] blur-2xl" />
               <div className="relative premium-card overflow-hidden rounded-[1.75rem]">
-                <PlaceholderImage
-                  variant="doctor"
-                  label="Dr. Geetha Jayapal"
-                  className="aspect-[4/5] sm:aspect-[5/6] w-full"
+                <Image
+                  src="/images/hospital-building.jpg"
+                  alt="Aayur Kendra Ayurveda Speciality Hospital Building"
+                  width={600}
+                  height={720}
+                  priority
+                  className="aspect-[4/5] sm:aspect-[5/6] w-full object-cover"
                 />
                 <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-brown-dark/80 via-brown-dark/40 to-transparent p-6 sm:p-8">
-                  <p className="text-white/70 text-xs uppercase tracking-wider font-medium">Chief Consultant</p>
+                  <p className="text-white/70 text-xs uppercase tracking-wider font-medium">Ayurveda Speciality Hospital</p>
                   <h3 className="font-serif text-xl sm:text-2xl font-semibold text-white mt-1">
-                    {siteConfig.founder.name}
+                    Aayur Kendra
                   </h3>
                   <p className="text-cream-light/80 text-sm mt-1">
-                    {siteConfig.founder.qualification} · {siteConfig.founder.experience}
+                    Authentic Healing & Clinical Care · Hosur
                   </p>
                 </div>
               </div>

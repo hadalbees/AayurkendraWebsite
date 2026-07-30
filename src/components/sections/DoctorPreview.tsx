@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Award, Calendar, GraduationCap, Star, ArrowRight } from "lucide-react";
 import { FadeIn } from "../ui/Motion";
 import PlaceholderImage from "../ui/PlaceholderImage";
@@ -38,13 +39,17 @@ export default function DoctorPreview() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <FadeIn direction="right" className="lg:col-span-5">
             <div className="relative rounded-3xl overflow-hidden shadow-xl border border-theme-border">
-              <PlaceholderImage
-                variant="doctor"
-                icon={GraduationCap}
-                label="Founder Photo — Replace with professional portrait"
-                className="aspect-[4/5] w-full"
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/50 to-transparent text-white">
+              <div className="relative aspect-[4/5] w-full bg-cream-bg">
+                <Image
+                  src="/images/dr-geetha.jpg"
+                  alt={siteConfig.founder.name}
+                  fill
+                  sizes="(max-w-768px) 100vw, 33vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/50 to-transparent text-white z-10">
                 <p className="text-[10px] uppercase tracking-[0.2em] text-brown-accent font-bold mb-1">
                   {siteConfig.founder.qualification}
                 </p>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star, Quote, ArrowRight, ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { Star, Quote, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { FadeIn } from "../ui/Motion";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
@@ -42,7 +42,7 @@ const testimonials = [
     date: "1 week ago",
     comment: "The 14-day Panchakarma program transformed my energy levels and digestion. The inpatient facility was clean, nursing staff were attentive, and Dr. Geetha's supervision gave me complete confidence.",
     verified: true,
-    type: "video" as const,
+    type: "text" as const,
   },
 ];
 
@@ -132,12 +132,7 @@ export default function TestimonialsPreview() {
                 transition={{ duration: 0.35 }}
                 className="space-y-6"
               >
-                {t.type === "video" && (
-                  <div className="inline-flex items-center space-x-2 bg-brown-accent/10 text-brown-accent dark:bg-brown-accent/15 dark:text-cream-bg text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full">
-                    <Play className="h-3 w-3 fill-current" />
-                    <span>Video Testimonial Ready</span>
-                  </div>
-                )}
+
 
                 <div className="flex items-center space-x-0.5 text-yellow-500">
                   {[...Array(t.rating)].map((_, i) => (

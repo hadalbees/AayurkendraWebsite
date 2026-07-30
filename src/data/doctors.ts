@@ -15,7 +15,7 @@ export const doctorsData: Doctor[] = [
   {
     slug: "dr-geetha-jayapal",
     name: "Dr. Geetha Jayapal",
-    title: "Founder & Chief Consultant",
+    title: "Founder & Senior Ayurveda Consultant",
     qualification: "B.A.M.S",
     experience: "25+ Years",
     speciality: "Panchakarma, Women's Wellness & Lifestyle Medicine",
@@ -33,6 +33,27 @@ export const doctorsData: Doctor[] = [
       "Certified practitioner in Kshara Sutra ano-rectal surgical ligation.",
       "Member of State Board of Ayurvedic Practitioners.",
       "Adviser on classical herb preservation and organic pharmaceutical standards."
+    ]
+  },
+  {
+    slug: "dr-dhanavanth",
+    name: "Dr. Dhanavanth",
+    title: "Proctologist & Ano-Rectal Surgeon",
+    qualification: "B.A.M.S, M.S. (Shalya Tantra)",
+    experience: "10+ Years",
+    speciality: "Kshara Sutra Therapy, Piles, Fissure & Fistula Management",
+    image: "/images/team/dr-dhanavanth.jpg",
+    bio: [
+      "Dr. Dhanavanth is a highly skilled Ayurvedic surgeon specializing in Shalya Tantra (Ano-rectal surgery) and the minimally invasive Kshara Sutra therapy.",
+      "He has successfully treated numerous patients suffering from complex and recurrent ano-rectal conditions such as fistula-in-ano, hemorrhoids (piles), and anal fissures, utilizing specialized medicated thread ligation.",
+      "With a focus on root-cause resolution, minimal recurrence, and post-procedural recovery, Dr. Dhanavanth combines classical surgical methodologies with modern diagnostics to deliver optimal patient outcomes."
+    ],
+    videoUrl: "",
+    achievements: [
+      "Successfully completed over 1,500+ successful Kshara Sutra procedures for complex fistulas.",
+      "Specialist in treating high-anal and recurrent fistulas with minimal downtime.",
+      "Active member of the Association of Shalya Tantra (Ayurvedic Surgeons of India).",
+      "Presented clinical papers on advanced Kshara Sutra techniques in national medical symposiums."
     ]
   }
 ];

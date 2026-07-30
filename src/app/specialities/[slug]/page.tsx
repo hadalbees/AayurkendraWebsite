@@ -72,7 +72,7 @@ export default function SpecialityDetailPage({
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brown-muted via-transparent to-transparent pointer-events-none" />
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <nav className="flex space-x-2 text-xs uppercase tracking-wider text-cream-bg/60 mb-4">
+            <nav className="flex space-x-2 text-xs uppercase tracking-wider text-brown-muted mb-4">
               <Link href="/" className="hover:text-brown-accent transition-colors">Home</Link>
               <span>/</span>
               <Link href="/specialities" className="hover:text-brown-accent transition-colors">Specialities</Link>
@@ -273,7 +273,7 @@ export default function SpecialityDetailPage({
 
               {/* Consultation Booking Widget Side-bar */}
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-cream-light to-white text-brown-dark rounded-2xl p-6 sm:p-8 shadow-lg space-y-6 relative overflow-hidden border border-white/5">
+                <div className="bg-gradient-to-br from-cream-light to-white text-brown-dark rounded-2xl p-6 sm:p-8 shadow-lg space-y-6 relative overflow-hidden border border-brown-dark/5">
                   <div className="absolute top-0 right-0 -translate-y-6 translate-x-6 h-24 w-24 bg-white/5 rounded-full pointer-events-none" />
                   
                   <div className="space-y-2">
@@ -283,22 +283,22 @@ export default function SpecialityDetailPage({
                     <h3 className="font-serif text-2xl font-bold">
                       Consult with Dr. Geetha Jayapal
                     </h3>
-                    <p className="text-xs text-cream-bg/80 leading-relaxed font-light">
+                    <p className="text-xs text-brown-muted leading-relaxed font-light">
                       Founder & Chief Consultant with 25+ years of Ayurvedic clinical excellence.
                     </p>
                   </div>
 
-                  <div className="border-t border-white/10 pt-4 space-y-3">
+                  <div className="border-t border-brown-dark/10 pt-4 space-y-3">
                     <div className="flex items-center space-x-3 text-xs">
-                      <CheckCircle2 className="h-4.5 w-4.5 text-brown-accent shrink-0" />
+                      <CheckCircle2 className="h-4.5 w-4.5 text-ayur-green shrink-0" />
                       <span>Customized Diet & Lifestyle Plans</span>
                     </div>
                     <div className="flex items-center space-x-3 text-xs">
-                      <CheckCircle2 className="h-4.5 w-4.5 text-brown-accent shrink-0" />
+                      <CheckCircle2 className="h-4.5 w-4.5 text-ayur-green shrink-0" />
                       <span>10-Bed Inpatient Care Available</span>
                     </div>
                     <div className="flex items-center space-x-3 text-xs">
-                      <CheckCircle2 className="h-4.5 w-4.5 text-brown-accent shrink-0" />
+                      <CheckCircle2 className="h-4.5 w-4.5 text-ayur-green shrink-0" />
                       <span>Authentic Medicine Pharmacy</span>
                     </div>
                   </div>
@@ -313,7 +313,7 @@ export default function SpecialityDetailPage({
                     </Link>
                     <a
                       href="tel:+919150112757"
-                      className="bg-white/10 hover:bg-white/15 text-white text-center font-medium py-3 rounded-full text-sm border border-white/10 flex items-center justify-center space-x-2 transition-all cursor-pointer"
+                      className="bg-white hover:bg-cream-light text-brown-dark text-center font-medium py-3 rounded-full text-sm border border-brown-dark/15 hover:border-brown-dark/25 flex items-center justify-center space-x-2 transition-all cursor-pointer"
                     >
                       <span>Call Hospital Now</span>
                     </a>

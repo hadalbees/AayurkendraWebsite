@@ -6,6 +6,7 @@ export interface TeamMember {
   speciality?: string;
   image: string;
   bio?: string;
+  category?: 'practitioner' | 'support';
 }
 
 export const teamData: TeamMember[] = [
@@ -16,7 +17,8 @@ export const teamData: TeamMember[] = [
     qualification: "B.A.M.S",
     speciality: "General Consultations & Panchakarma",
     image: "/images/team/jeevan.jpg",
-    bio: "Specializes in constitutional analysis, pulse diagnosis, and traditional Panchakarma detoxification regimens."
+    bio: "Specializes in constitutional analysis, pulse diagnosis, and traditional Panchakarma detoxification regimens.",
+    category: "practitioner"
   },
   {
     slug: "smith",
@@ -25,7 +27,8 @@ export const teamData: TeamMember[] = [
     qualification: "B.A.M.S, YIC",
     speciality: "Lifestyle Medicine & Stress Management",
     image: "/images/team/smith.jpg",
-    bio: "Focuses on stress relief, metabolic disorders, and combining therapeutic yoga with classical Ayurvedic diets."
+    bio: "Focuses on stress relief, metabolic disorders, and combining therapeutic yoga with classical Ayurvedic diets.",
+    category: "practitioner"
   },
   {
     slug: "sreelaka",
@@ -34,7 +37,8 @@ export const teamData: TeamMember[] = [
     qualification: "B.A.M.S",
     speciality: "Gynecology & Postnatal Care",
     image: "/images/team/sreelaka.jpg",
-    bio: "Dedicated to female wellness, hormonal balance treatments, and traditional Ayurvedic maternal recovery."
+    bio: "Dedicated to female wellness, hormonal balance treatments, and traditional Ayurvedic maternal recovery.",
+    category: "practitioner"
   },
   {
     slug: "aswin",
@@ -43,6 +47,16 @@ export const teamData: TeamMember[] = [
     qualification: "D.Ay (Diploma in Ayurveda)",
     speciality: "Therapeutic Massages & Marma Therapy",
     image: "/images/team/aswin.jpg",
-    bio: "Expert coordinator of therapeutic oil procedures, steam treatments, and orthopedic muscle rehabilitation."
+    bio: "Expert coordinator of therapeutic oil procedures, steam treatments, and orthopedic muscle rehabilitation.",
+    category: "practitioner"
+  },
+  {
+    slug: "mugilan",
+    name: "Mugilan",
+    role: "Healthcare Technician",
+    speciality: "Patient Care & Therapy Support",
+    image: "/images/team/mugilan.jpg",
+    bio: "Coordinates and assists in delivering therapeutic procedures, ensuring patient comfort, sterile treatment environments, and seamless clinical operations.",
+    category: "support"
   }
 ];

@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { Play, Award, GraduationCap, HeartHandshake, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { FadeIn } from "../ui/Motion";
 import SectionHeader from "../ui/SectionHeader";
 import PlaceholderImage from "../ui/PlaceholderImage";
@@ -36,11 +37,14 @@ export default function AboutDoctor() {
           <div className="lg:col-span-5 space-y-6">
 
             <FadeIn direction="right">
-              <div className="premium-card overflow-hidden rounded-[1.5rem]">
-                <PlaceholderImage
-                  variant="doctor"
-                  label="Doctor Portrait"
-                  className="aspect-square w-full"
+              <div className="premium-card overflow-hidden rounded-[1.5rem] relative aspect-square w-full bg-cream-bg">
+                <Image
+                  src="/images/dr-geetha.jpg"
+                  alt={siteConfig.founder.name}
+                  fill
+                  sizes="(max-w-768px) 100vw, 33vw"
+                  className="object-cover"
+                  priority
                 />
               </div>
             </FadeIn>

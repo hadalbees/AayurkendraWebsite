@@ -5,11 +5,11 @@ import Footer from "@/components/layout/Footer";
 import FloatingWidgets from "@/components/ui/FloatingWidgets";
 import { FadeIn } from "@/components/ui/Motion";
 import Link from "next/link";
-import { 
-  Award, 
-  GraduationCap, 
-  MapPin, 
-  Calendar, 
+import {
+  Award,
+  GraduationCap,
+  MapPin,
+  Calendar,
   CheckCircle,
   Briefcase,
   Star,
@@ -73,7 +73,7 @@ export default function DoctorsPage() {
         <section className="py-20 bg-cream-bg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-              
+
               {/* Doctor Visual profile illustration */}
               <div className="lg:col-span-4 space-y-6">
                 <FadeIn direction="right">
@@ -175,7 +175,7 @@ export default function DoctorsPage() {
                         Aayur Kendra is currently onboarding secondary specialist consultants in Ayurvedic Ophthalmology (Shalakya Tantra), Yoga therapists, and clinical physical rehabilitation specialists to expand patient care.
                       </p>
                     </div>
-                    
+
                     <span className="shrink-0 inline-block bg-brown-accent/8 text-brown-accent text-xs font-bold uppercase tracking-wider px-3.5 py-2 rounded-xl border border-brown-accent/20">
                       Join Our Team
                     </span>
@@ -183,7 +183,7 @@ export default function DoctorsPage() {
                 </FadeIn>
 
               </div>
-              
+
             </div>
           </div>
         </section>
