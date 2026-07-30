@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="bg-cream-light border-t border-brown-dark/8 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="space-y-4">
             <Link href="/" className="flex flex-col">
               <span className="font-serif text-2xl font-semibold text-brown-dark">
@@ -30,15 +30,14 @@ export default function Footer() {
 
           <div>
             <h3 className="font-serif text-base font-semibold text-brown-dark mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-xs sm:text-sm text-brown-muted">
+            <ul className="space-y-2.5 text-sm text-brown-muted">
               {[
                 { name: "Home", href: "/" },
                 { name: "About Us", href: "/about" },
-                { name: "Specialities", href: "/specialities" },
-                { name: "Therapies", href: "/therapies" },
+                { name: "Treatments", href: "/therapies" },
                 { name: "Doctors", href: "/doctors" },
-                { name: "Facilities", href: "/facilities" },
-                { name: "Gallery", href: "/gallery" },
+                { name: "Testimonials", href: "/testimonials" },
+                { name: "Blog", href: "/blog" },
                 { name: "Contact", href: "/contact" },
                 { name: "Book Appointment", href: "/appointment" },
               ].map((link) => (
@@ -52,43 +51,14 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-serif text-base font-semibold text-brown-dark mb-4">Specialities</h3>
-            <ul className="space-y-2 text-xs sm:text-sm text-brown-muted">
-              {[
-                { name: "Women's Wellness", href: "/specialities/womens-wellness" },
-                { name: "Lifestyle Disease", href: "/specialities/lifestyle-disease-management" },
-                { name: "Ayurvedic Eye Care", href: "/specialities/ayurvedic-eye-care" },
-                { name: "Ano Rectal Care", href: "/specialities/ano-rectal-care" },
-                { name: "Pain Management", href: "/specialities/pain-management" },
-                { name: "Spine & Joint Care", href: "/specialities/spine-joint-care" },
-                { name: "Neurological Rehab", href: "/specialities/neurological-rehabilitation" },
-                { name: "Mental Wellness", href: "/specialities/mental-wellness" },
-                { name: "Post Operative Care", href: "/specialities/post-operative-care" },
-                { name: "Aesthetic Medicine", href: "/specialities/aesthetic-medicine" },
-              ].map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="hover:text-ayur-green transition-colors">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-serif text-base font-semibold text-brown-dark mb-4">Therapies</h3>
-            <ul className="space-y-2 text-xs sm:text-sm text-brown-muted">
+            <h3 className="font-serif text-base font-semibold text-brown-dark mb-4">Treatments</h3>
+            <ul className="space-y-2.5 text-sm text-brown-muted">
               {[
                 { name: "Panchakarma", href: "/therapies/panchakarma" },
                 { name: "Abhyangam", href: "/therapies/abhyangam" },
                 { name: "Shirodhara", href: "/therapies/shirodhara" },
-                { name: "Takra Dhara", href: "/therapies/takra-dhara" },
-                { name: "Pizhichil", href: "/therapies/pizhichil" },
-                { name: "Kizhi", href: "/therapies/kizhi" },
-                { name: "Nasya", href: "/therapies/nasya" },
-                { name: "Basti", href: "/therapies/basti" },
-                { name: "Virechana", href: "/therapies/virechana" },
-                { name: "Netra Tarpanam", href: "/therapies/netra-tarpanam" },
+                { name: "Kizhi Therapy", href: "/therapies/kizhi" },
+                { name: "Women's Wellness", href: "/specialities/womens-wellness" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="hover:text-ayur-green transition-colors">
@@ -101,7 +71,7 @@ export default function Footer() {
 
           <div className="space-y-4">
             <h3 className="font-serif text-base font-semibold text-brown-dark mb-4">Contact</h3>
-            <ul className="space-y-3 text-xs sm:text-sm text-brown-muted font-light">
+            <ul className="space-y-3 text-sm text-brown-muted font-light">
               <li className="flex items-start gap-2.5">
                 <MapPin className="h-4 w-4 text-ayur-green shrink-0 mt-0.5" />
                 <span>
@@ -126,8 +96,8 @@ export default function Footer() {
                 <span>{siteConfig.hours.weekdays}</span>
               </li>
             </ul>
-            <Link href="/appointment" className="btn-primary text-xs py-2.5 px-4 w-full text-center flex justify-center">
-              <Calendar className="h-3.5 w-3.5 mr-1" />
+            <Link href="/appointment" className="btn-primary text-xs py-2.5 px-4">
+              <Calendar className="h-3.5 w-3.5" />
               Book Appointment
             </Link>
           </div>

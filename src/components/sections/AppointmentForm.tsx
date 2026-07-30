@@ -274,7 +274,7 @@ function FormContent() {
                 className="btn-primary w-full sm:w-auto disabled:opacity-50 cursor-pointer"
                 suppressHydrationWarning={true}
               >
-                <span>{isSubmitting ? "Registering..." : "Book Appointment"}</span>
+                <span>{isSubmitting ? "Registering..." : "Confirm Booking"}</span>
               </button>
 
               <div className="flex items-center space-x-4 w-full sm:w-auto justify-center">

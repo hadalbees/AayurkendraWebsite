@@ -91,8 +91,8 @@ export const specialitiesData: Speciality[] = [
   },
   {
     slug: "ayurvedic-eye-care",
-    title: "Ayurvedic Eye Care",
-    tagline: "Preserving and Restoring Natural Vision (Shalakya Tantra)",
+    title: "Ayurvedic Eye Care (Shalakya Tantra)",
+    tagline: "Preserving and Restoring Natural Vision",
     iconName: "Eye",
     overview: "With increased screen time, eye strain, dryness, and degenerative visual conditions have risen dramatically. In Ayurveda, Shalakya Tantra is the specialized branch dealing with ailments of the head and eyes. At Aayur Kendra, we employ ancient ocular therapies (Netra Kriya Kalpa) combined with visual hygiene practices to rejuvenate vision, lubricate tissues, and prevent sight-threatening degeneration.",
     conditionsTreated: [
@@ -130,10 +130,10 @@ export const specialitiesData: Speciality[] = [
   },
   {
     slug: "ano-rectal-care",
-    title: "Ano Rectal Care",
+    title: "Ano-Rectal Speciality Care",
     tagline: "Gentle, Non-Surgical Solutions for Sensitive Disorders",
     iconName: "ShieldAlert",
-    overview: "Ano-rectal conditions like piles, fissures, and fistulas cause immense physical discomfort and psychological distress. Conventional surgeries often carry risks of recurrence or incontinence. Aayur Kendra offers specialized Ayurvedic ano-rectal care, focusing on bowel regulation, local anti-inflammatory therapies, and the globally acclaimed, minimally invasive Kshara Sutra treatment for complex fistulas.",
+    overview: "Ano-rectal conditions like piles, fissures, and fistulas cause immense physical discomfort and psychological distress. Conventional surgeries often carry risks of recurrence or incontinence. Aayur Kendra offers specialized Ayurvedic ano-rectal care, focusing on bowel regulation, local anti-inflammatory therapies, and the globally acclaimed, minimally invasive Khara Sutra treatment for complex fistulas.",
     conditionsTreated: [
       "Hemorrhoids (Piles) - Bleeding & Non-Bleeding",
       "Anal Fissure (Acute & Chronic)",
@@ -167,203 +167,8 @@ export const specialitiesData: Speciality[] = [
     ]
   },
   {
-    slug: "pain-management",
-    title: "Pain Management",
-    tagline: "Relieving Chronic and Acute Pain Naturally",
-    iconName: "Sparkles",
-    overview: "Chronic pain can exhaust your nervous system and limit your freedom. Rather than masking pain with addictive pharmaceuticals, Aayur Kendra's Pain Management program targets the inflammatory and neurological roots. We combine systemic toxin removal, targeted medicated hot oil pooling (Basti), herbal poultices (Kizhi), and natural nerve calmers to restore pain-free movement.",
-    conditionsTreated: [
-      "Chronic Back Pain & Sciatica",
-      "Fibromyalgia & Generalized Body Pain",
-      "Cervical & Lumbar Muscle Spasms",
-      "Heel Pain & Plantar Fasciitis",
-      "Migraines & Tension Headaches",
-      "Myofascial Pain Syndrome"
-    ],
-    benefits: [
-      "Reduces dependency on chemical pain relievers and NSAIDs",
-      "Decreases systemic inflammation and alleviates muscle stiffness",
-      "Calms hyperactive pain receptors in the nervous system",
-      "Improves localized blood circulation and cellular healing",
-      "Restores physical mobility and overall quality of life"
-    ],
-    treatmentProcess: [
-      "Nadi Pariksha and trigger-point physical examination",
-      "Localized warm oil therapy (Kati Basti, Griva Basti)",
-      "Patra Pinda Sweda (hot herbal bolus massage) to release tension",
-      "Internal administration of anti-inflammatory herbs (Shallaki, Guggulu)",
-      "Gentle stretching exercises and ergonomic coaching"
-    ],
-    faqs: [
-      {
-        question: "How fast can I expect pain relief with Ayurvedic therapy?",
-        answer: "For acute muscle spasms or tension, patients often feel significant relief within 1 to 3 sessions. For chronic conditions like sciatica or fibromyalgia, a structured therapy course of 7 to 14 days is required to see sustained, long-term improvement."
-      },
-      {
-        question: "What is Kati Basti and how does it relieve lower back pain?",
-        answer: "Kati Basti involves building a reservoir of black gram dough on the lower back, filling it with warm medicated herbal oil (like Sahacharadi Taila), and maintaining its temperature. The warm oil deeply penetrates muscles, ligaments, and nerves, relieving pain, reducing inflammation, and lubricating spinal discs."
-      }
-    ]
-  },
-  {
-    slug: "spine-joint-care",
-    title: "Spine & Joint Care",
-    tagline: "Restoring Spinal Alignment and Joint Mobility",
-    iconName: "Activity",
-    overview: "Degenerative spinal changes and arthritic joints are often caused by aggravated Vata dosha, leading to dryness and tissue wasting. Our Spine & Joint Care wing specializes in reversing these degenerative processes. Through specialized oil pooling therapies, warm herbal compressions, and joint-nourishing treatments, we rebuild cartilage, lubricate joints, and stabilize the spine.",
-    conditionsTreated: [
-      "Osteoarthritis & Rheumatoid Arthritis",
-      "Cervical, Lumbar & Thoracic Spondylosis",
-      "Herniated or Slipped Discs & Sciatica",
-      "Ankylosing Spondylitis & Spinal Canal Stenosis",
-      "Frozen Shoulder & Rotator Cuff Tendonitis",
-      "Gouty Arthritis & Joint Deformities"
-    ],
-    benefits: [
-      "Nourishes degenerated joint tissues and promotes cartilage repair",
-      "Improves range of motion and joint flexibility",
-      "Reduces joint swelling, crunching sounds (crepitus), and stiffness",
-      "Strengthens the supporting spinal muscles and ligaments",
-      "Provides a reliable, non-surgical alternative for disc and joint wear"
-    ],
-    treatmentProcess: [
-      "Degenerative skeletal assessment and constitution mapping",
-      "Janu Basti (for knees), Kati Basti (for lower back), or Griva Basti (for neck)",
-      "Pizhichil (royal oil bath) and Njavarakizhi (nourishing rice-bolus massage)",
-      "Nourishing herbal decoctions internally to rebuild bone density (Asthi Dhatu)",
-      "Postural alignment advising and targeted yoga postures"
-    ],
-    faqs: [
-      {
-        question: "Can Ayurveda help if I've been advised to undergo knee replacement surgery?",
-        answer: "In early-to-moderate stages of joint degeneration (Grades 1 to 3 osteoarthritis), Ayurvedic therapies like Janu Basti, Abhyangam, and internal Rasayanas can regenerate joint lubrication, relieve pain, and delay or entirely prevent the need for surgery. For advanced bone-on-bone friction, we focus on pain reduction and improving lifestyle mobility."
-      },
-      {
-        question: "Is joint treatment only external massage?",
-        answer: "No. External oil pooling and bolus massages are vital, but joints cannot heal without internal corrections. We prescribe herbal formulations to digest metabolic toxins (Ama) blocking the joint channels, alongside mineral-rich herbs to strengthen the bone and cartilage structure from within."
-      }
-    ]
-  },
-  {
-    slug: "neurological-rehabilitation",
-    title: "Neurological Rehabilitation",
-    tagline: "Restoring Nerve Health, Motor Function, and Independence",
-    iconName: "Stethoscope",
-    overview: "Neurological disorders can impair motor control, speech, and daily function. Ayurveda categorizes these as severe Vata disorders affecting the nervous pathways (Majja Dhatu). At Aayur Kendra, our integrated rehabilitation combines classic nerve-nourishing oil therapies, Shirodhara, nasal medication (Nasya) to stimulate brain centers, and modern physical therapy to restore neuro-muscular pathways.",
-    conditionsTreated: [
-      "Post-Stroke Recovery (Hemiplegia / Paraplegia)",
-      "Facial Palsy (Bell's Palsy)",
-      "Parkinson's Disease & Tremors",
-      "Multiple Sclerosis & Motor Neuron Disease (MND)",
-      "Peripheral Neuropathy & Numbness",
-      "Spinal Cord Injury Rehabilitation"
-    ],
-    benefits: [
-      "Stimulates nerve pathways and improves blood flow to the brain",
-      "Reduces muscle spasticity and prevents joint contractures",
-      "Rebuilds muscle tone and coordinates motor skills",
-      "Enhances balance, gait stability, and prevents falls",
-      "Speeds up recovery of facial expressions and speech articulation"
-    ],
-    treatmentProcess: [
-      "Neurological motor reflex and muscle tone evaluation",
-      "Nasya (nasal administration) to clear and nourish cranial channels",
-      "Shirodhara or Shiro Basti (pooling oil on the scalp) for brain health",
-      "Synchronized Abhyangam and Pizhichil to rebuild wasted muscle groups",
-      "Daily manual physical exercises and motor retraining"
-    ],
-    faqs: [
-      {
-        question: "How does Nasya therapy assist in stroke and facial palsy?",
-        answer: "In facial palsy and stroke, the cranial nerves are affected. In Ayurveda, the nasal passage is the doorway to the head. Nasya administers warm, herbal oils (like Ksheerabala Taila) which are directly absorbed by the nasal mucosa, helping soothe facial nerves, improve circulation, and stimulate motor centers in the brain."
-      },
-      {
-        question: "What is the timeline for post-stroke rehabilitation?",
-        answer: "Rehabilitation should start as soon as the patient is medically stable. The first 3 to 6 months post-stroke offer the highest neuroplastic recovery window. A dynamic 14-to-21 day inpatient course, repeated at intervals, alongside daily home physical therapy and herbs yields the best results."
-      }
-    ]
-  },
-  {
-    slug: "mental-wellness",
-    title: "Mental Health & Emotional Wellness",
-    tagline: "Nurturing Emotional Harmony and Mental Resilience",
-    iconName: "Brain",
-    overview: "At Aayur Kendra, we believe mental wellness is core to physical health, focusing on balancing the mental gunas (Sattva, Rajas, Tamas). Our Mental Health wing combines modern cognitive-behavioral counseling with Ayurvedic psychology (Satvajaya Chikitsa) and stress-reducing therapies (Shirodhara, Pratimasra Nasya). We provide a safe, confidential environment to help you heal emotional wounds, manage stress, and develop mental resilience.",
-    conditionsTreated: [
-      "Generalized Anxiety Disorder (GAD) & Panic Attacks",
-      "Depressive Disorders & Mood Swings",
-      "Chronic Stress, Burnout & Work-Life Imbalance",
-      "Grief, Relationship Issues & Psychological Trauma",
-      "Somatoform Disorders (Mind-Body Ailments)",
-      "Insomnia & Stress-Induced Eating Disorders"
-    ],
-    benefits: [
-      "Provides healthy cognitive tools to process negative thoughts and emotions",
-      "Reduces psychological distress and calms the autonomic nervous system",
-      "Improves quality of sleep, focus, and emotional self-regulation",
-      "Helps repair relationships and builds effective communication skills",
-      "Addresses the psychosomatic roots of chronic physical pain"
-    ],
-    treatmentProcess: [
-      "Personalized counseling sessions using CBT and client-centered models",
-      "Satvajaya Chikitsa (Ayurvedic therapy for mental restraint and control)",
-      "Mindfulness training, pranayama, and grounding meditation",
-      "Coordination with calming physical therapies like Shirodhara",
-      "Assistance in identifying and changing unhealthy lifestyle habits"
-    ],
-    faqs: [
-      {
-        question: "What is Satvajaya Chikitsa?",
-        answer: "Satvajaya Chikitsa is the Ayurvedic psychotherapy branch, meaning 'conquering the mind'. It focuses on training the mind to avoid harmful thoughts and habits (Ahita Artha), and cultivating mental clarity (Sattva) through self-study, moral guidelines, and deep concentration techniques."
-      },
-      {
-        question: "Is psychotherapy confidential?",
-        answer: "Yes, confidentiality is a core ethical principle. All discussions, records, and therapeutic assessments remain strictly confidential between the client and the therapist, ensuring a safe, supportive space for healing."
-      }
-    ]
-  },
-  {
-    slug: "post-operative-care",
-    title: "Post Operative Rehabilitation",
-    tagline: "Reclaiming Mobility and Rebuilding Strength",
-    iconName: "Sparkles",
-    overview: "Rehabilitation is key to restoring quality of life after surgeries, orthopedic traumas, or joint replacements. Our Post Operative Rehabilitation department combines modern biomechanical evaluations, manual therapy, and therapeutic exercises with traditional Ayurvedic massage therapies (like Kizhi and Abhyangam). This integrated approach provides faster pain relief and speeds up muscle and nerve recovery.",
-    conditionsTreated: [
-      "Post-operative Orthopedic Recovery (Knee/Hip Replacement)",
-      "Post-Surgical Joint Stiffness & Scar Tissue Management",
-      "Frozen Shoulder & Adhesive Capsulitis",
-      "Osteoarthritis, Rheumatoid Arthritis & Ankylosing Spondylitis",
-      "Sports Injuries (Ligament Sprains, Muscle Strains)",
-      "Cervical and Lumbar Spondylosis"
-    ],
-    benefits: [
-      "Relieves muscle spasms, joint stiffness, and acute post-surgical pain",
-      "Restores standard muscle strength, endurance, and range of motion",
-      "Prevents joint deformities and muscle wasting in chronic disorders",
-      "Improves gait, balance, and motor coordination post-surgery",
-      "Promotes independent mobility for activities of daily living (ADLs)"
-    ],
-    treatmentProcess: [
-      "Detailed assessment of muscle strength, joint range, and reflex levels",
-      "Manual therapy, joint mobilization, and trigger point release",
-      "Therapeutic exercises using resistance bands, weights, and balance boards",
-      "Application of electrotherapy (TENS, Ultrasound) if indicated",
-      "Coordinating sessions alongside warming Ayurvedic Kizhi (bolus massage)"
-    ],
-    faqs: [
-      {
-        question: "How does physiotherapy integrate with Ayurvedic massages?",
-        answer: "This combination is highly effective. The Ayurvedic oil massage (Abhyangam) and herbal steam massage (Kizhi) help soften stiff muscles, improve local blood supply, and relieve pain. Once the tissues are warmed and relaxed, the physiotherapist can perform manual mobilization and exercises with less discomfort, achieving faster rehabilitation."
-      },
-      {
-        question: "How long is a rehab session, and how many are needed?",
-        answer: "A standard physical therapy session lasts between 45 to 60 minutes. The number of sessions required depends on the severity of the condition; acute recovery might need 6 to 10 sessions, whereas major joint replacements might require regular treatment over several weeks."
-      }
-    ]
-  },
-  {
     slug: "aesthetic-medicine",
-    title: "Aesthetic Medicine",
+    title: "Ayurvedic Aesthetic Medicine",
     tagline: "Radiating Beauty from the Inside Out",
     iconName: "Sparkles",
     overview: "Ayurveda believes outer beauty is a direct reflection of inner health, clean blood (Raktha), and balanced skin metabolism (Bhrajaka Pitta). Instead of harsh chemical peelings or fillers, our Ayurvedic aesthetic therapies use organic herbs, fresh botanicals, active essential oils, and blood-purifying therapies to reverse aging, treat acne, and restore natural skin and hair vitality.",
@@ -397,6 +202,162 @@ export const specialitiesData: Speciality[] = [
       {
         question: "Is leech therapy (Jalaukavacharana) safe for acne?",
         answer: "Yes, it is highly safe and sterile. Medical-grade leeches are applied to active acne lesions or pigmented spots. They gently suck out stagnant, toxic blood while injecting saliva containing anti-inflammatory, anesthetic, and blood-thinning compounds, promoting rapid healing and skin regeneration."
+      }
+    ]
+  },
+  {
+    slug: "yoga-therapy",
+    title: "Yoga Therapy",
+    tagline: "Uniting Breath, Body, and Mind for Healing",
+    iconName: "Flower2",
+    overview: "Yoga and Ayurveda are sister sciences originating from the Vedic tradition. While Ayurveda manages the somatic aspects of health, Yoga addresses the energetic and mental patterns. Our Yoga Therapy sessions at Aayur Kendra are not general fitness classes; they are clinically structured, personalized programs designed to support healing for musculoskeletal, cardiovascular, and stress-related conditions.",
+    conditionsTreated: [
+      "Chronic Back Pain, Sciatica & Herniated Discs",
+      "Anxiety Disorders, Depression & Stress",
+      "Asthma & Chronic Obstructive Pulmonary Diseases (COPD)",
+      "Insomnia & Sleep Apnea",
+      "Joint Stiffness & Postural Deformities",
+      "Thyroid and Endocrine System Imbalances"
+    ],
+    benefits: [
+      "Increases spinal flexibility and core muscular strength",
+      "Calms the sympathetic nervous system and reduces cortisol (stress)",
+      "Enhances lung capacity and improves breathing patterns",
+      "Aids in pain management and decreases reliance on painkillers",
+      "Improves joint range of motion and overall physical coordination"
+    ],
+    treatmentProcess: [
+      "Biomechanical assessment and assessment of breathing patterns",
+      "Formulation of a customized Yoga Asana (posture) routine",
+      "Pranayama (breath work) tailored to balance specific Doshas",
+      "Yoga Nidra (guided yogic sleep) for deep neurological relaxation",
+      "Integration of dhyana (meditation) for cognitive clarity"
+    ],
+    faqs: [
+      {
+        question: "I am not flexible. Can I still do Yoga Therapy?",
+        answer: "Absolutely. Yoga Therapy is tailored to your current physical limits. We use props, chairs, and modifications. Flexibilty is a result of yoga, not a prerequisite. Our therapists design routines specifically suited to your age, mobility, and pathology."
+      },
+      {
+        question: "How does Yoga Therapy work alongside Ayurvedic treatments?",
+        answer: "Yoga Therapy acts as a catalyst. For example, during a Panchakarma detox, yoga postures help release tension from deep tissues, while breathing techniques (Pranayama) calm the mind and assist the nervous system in integrating the cellular changes brought about by the physical treatments."
+      }
+    ]
+  },
+  {
+    slug: "naturopathy",
+    title: "Naturopathy",
+    tagline: "Harnessing the Five Great Elements of Nature",
+    iconName: "Leaf",
+    overview: "Naturopathy is a system of healthcare that emphasizes the use of natural elements (Earth, Water, Fire, Air, Ether) to stimulate the body's self-healing mechanisms. At Aayur Kendra, we integrate Naturopathic therapies with Ayurveda. By utilizing treatments like mud packs, hydrotherapy, and structured fasting, we accelerate the detoxification process, boost immunity, and help patients reconnect with nature's wisdom.",
+    conditionsTreated: [
+      "General Obesity & Localized Fat Deposition",
+      "Eczema, Psoriasis & Chronic Dermatitis",
+      "Chronic Indigestion, Flatulence & Irritable Bowel Syndrome (IBS)",
+      "Arthritis, Gout & Inflammatory Joint Pains",
+      "Sinusitis & Chronic Allergies",
+      "Toxic Accumulation & Low Immunity"
+    ],
+    benefits: [
+      "Stimulates internal organ function and circulation naturally",
+      "Soothes inflamed skin tissues and decreases allergic reactions",
+      "Promotes systemic detoxification through skin, kidneys, and bowels",
+      "Reduces chronic joint pain and swelling using natural heat/cold applications",
+      "Restores natural appetite, improves digestion, and balances sleep"
+    ],
+    treatmentProcess: [
+      "Assessment of lifestyle, dietary habits, and nature connectivity",
+      "Hydrotherapy treatments (hip baths, spinal baths, steam inhalation)",
+      "Mud Therapy (application of mineral-rich soil packs to abdomen or eyes)",
+      "Diet therapy, juice fasts, and elimination diets",
+      "Sunbaths (Chromotherapy) and breathing fresh air in nature"
+    ],
+    faqs: [
+      {
+        question: "How does Mud Therapy benefit the digestion?",
+        answer: "Applying a cold, moist mud pack on the abdomen cools the skin surface, redirecting blood flow internally to the stomach and intestines. It stimulates sluggish peristalsis, absorbs toxins, relieves congestion, and helps alleviate constipation and bloating."
+      },
+      {
+        question: "Is fasting safe during Naturopathy?",
+        answer: "Fasting is one of Naturopathy's main therapeutic tools. It gives the digestive tract a rest, redirecting energy toward cellular repair. At our hospital, fasting is always structured individually and monitored by doctors, utilizing fresh fruit juices, herbal teas, or warm water."
+      }
+    ]
+  },
+  {
+    slug: "physiotherapy",
+    title: "Physiotherapy",
+    tagline: "Reclaiming Mobility and Rebuilding Strength",
+    iconName: "Stethoscope",
+    overview: "Rehabilitation is key to restoring quality of life after surgeries, neurological events, or orthopedic traumas. Our Physiotherapy department combines modern biomechanical evaluations, manual therapy, and therapeutic exercises with traditional Ayurvedic massage therapies (like Kizhi and Abhyangam). This integrated approach provides faster pain relief and speeds up muscle and nerve recovery.",
+    conditionsTreated: [
+      "Stroke (Hemiplegia) & Neurological Rehabilitation",
+      "Post-operative Orthopedic Recovery (Knee/Hip Replacement)",
+      "Frozen Shoulder & Adhesive Capsulitis",
+      "Osteoarthritis, Rheumatoid Arthritis & Ankylosing Spondylitis",
+      "Sports Injuries (Ligament Sprains, Muscle Strains)",
+      "Cervical and Lumbar Spondylosis"
+    ],
+    benefits: [
+      "Relieves muscle spasms, joint stiffness, and acute pain",
+      "Restores standard muscle strength, endurance, and range of motion",
+      "Prevents joint deformities and muscle wasting in chronic disorders",
+      "Improves gait, balance, and motor coordination post-stroke",
+      "Promotes independent mobility for activities of daily living (ADLs)"
+    ],
+    treatmentProcess: [
+      "Detailed assessment of muscle strength, joint range, and reflex levels",
+      "Manual therapy, joint mobilization, and trigger point release",
+      "Therapeutic exercises using resistance bands, weights, and balance boards",
+      "Application of electrotherapy (TENS, Ultrasound) if indicated",
+      "Coordinating sessions alongside warming Ayurvedic Kizhi (bolus massage)"
+    ],
+    faqs: [
+      {
+        question: "How does physiotherapy integrate with Ayurvedic massages?",
+        answer: "This combination is highly effective. The Ayurvedic oil massage (Abhyangam) and herbal steam massage (Kizhi) help soften stiff muscles, improve local blood supply, and relieve pain. Once the tissues are warmed and relaxed, the physiotherapist can perform manual mobilization and exercises with less discomfort, achieving faster rehabilitation."
+      },
+      {
+        question: "How long is a rehab session, and how many are needed?",
+        answer: "A standard physical therapy session lasts between 45 to 60 minutes. The number of sessions required depends on the severity of the condition; acute sports injuries might need 6 to 10 sessions, whereas stroke rehabilitation is a long-term process requiring regular treatment over several months."
+      }
+    ]
+  },
+  {
+    slug: "psychotherapy",
+    title: "Psychotherapy & Mental Health",
+    tagline: "Nurturing Emotional Harmony and Mental Resilience",
+    iconName: "Brain",
+    overview: "At Aayur Kendra, we believe mental wellness is core to physical health (Sattva, Rajas, Tamas balance). Our Psychotherapy department combines modern cognitive-behavioral counseling with Ayurvedic psychology (Satvajaya Chikitsa) and stress-reducing therapies (Shirodhara, Pratimasra Nasya). We provide a safe, confidential environment to help you heal emotional wounds, manage stress, and develop mental resilience.",
+    conditionsTreated: [
+      "Generalized Anxiety Disorder (GAD) & Panic Attacks",
+      "Depressive Disorders & Mood Swings",
+      "Chronic Stress, Burnout & Work-Life Imbalance",
+      "Grief, Relationship Issues & Psychological Trauma",
+      "Somatoform Disorders (Mind-Body Ailments)",
+      "Insomnia & Stress-Induced Eating Disorders"
+    ],
+    benefits: [
+      "Provides healthy cognitive tools to process negative thoughts and emotions",
+      "Reduces psychological distress and calms the autonomic nervous system",
+      "Improves quality of sleep, focus, and emotional self-regulation",
+      "Helps repair relationships and builds effective communication skills",
+      "Addresses the psychosomatic roots of chronic physical pain"
+    ],
+    treatmentProcess: [
+      "Personalized counseling sessions using CBT and client-centered models",
+      "Satvajaya Chikitsa (Ayurvedic therapy for mental restraint and control)",
+      "Mindfulness training, pranayama, and grounding meditation",
+      "Coordination with calming physical therapies like Shirodhara",
+      "Assistance in identifying and changing unhealthy lifestyle habits"
+    ],
+    faqs: [
+      {
+        question: "What is Satvajaya Chikitsa?",
+        answer: "Satvajaya Chikitsa is the Ayurvedic psychotherapy branch, meaning 'conquering the mind'. It focuses on training the mind to avoid harmful thoughts and habits (Ahita Artha), and cultivating mental clarity (Sattva) through self-study, moral guidelines, and deep concentration techniques."
+      },
+      {
+        question: "Is psychotherapy confidential?",
+        answer: "Yes, confidentiality is a core ethical principle. All discussions, records, and therapeutic assessments remain strictly confidential between the client and the therapist, ensuring a safe, supportive space for healing."
       }
     ]
   }

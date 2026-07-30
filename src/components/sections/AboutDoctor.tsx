@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { Play, Award, GraduationCap, HeartHandshake, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,28 +10,10 @@ import PlaceholderImage from "../ui/PlaceholderImage";
 import { LeafAccent } from "../ui/LeafPattern";
 import { siteConfig } from "@/lib/site";
 
-interface AboutDoctorProps {
-  isVideoOpen?: boolean;
-  setIsVideoOpen?: (open: boolean) => void;
-}
-
-export default function AboutDoctor({ isVideoOpen, setIsVideoOpen }: AboutDoctorProps = {}) {
+export default function AboutDoctor() {
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-
-  useEffect(() => {
-    if (isVideoOpen) {
-      const section = document.getElementById("about-doctor");
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
-      setIsPlaying(true);
-      setTimeout(() => {
-        videoRef.current?.play();
-      }, 300);
-    }
-  }, [isVideoOpen]);
 
   return (
     <section

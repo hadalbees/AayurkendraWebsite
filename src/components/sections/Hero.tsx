@@ -1,16 +1,12 @@
 "use client";
 
-import Image from "next/image";
-import { useState } from "react";
 import Link from "next/link";
 import { Calendar, Phone, Play, ShieldCheck } from "lucide-react";
-import VideoModal from "../ui/VideoModal";
 import { FadeIn } from "../ui/Motion";
 import { LeafAccent } from "../ui/LeafPattern";
 import { siteConfig } from "@/lib/site";
 
-export default function Hero() {
-  const [isVideoOpen, setIsVideoOpen] = useState(false);
+export default function Hero({ onWatchVideo }: { onWatchVideo: () => void }) {
   return (
     <section className="relative min-h-[92vh] flex items-center pt-24 pb-16 overflow-hidden bg-cream-light">
       <LeafAccent className="-top-10 -left-10 opacity-50" />
@@ -46,7 +42,7 @@ export default function Hero() {
                 <Calendar className="h-5 w-5" />
                 Book Appointment
               </Link>
-              <button onClick={() => setIsVideoOpen(true)} className="btn-secondary w-full sm:w-auto cursor-pointer">
+              <button onClick={onWatchVideo} className="btn-secondary w-full sm:w-auto cursor-pointer">
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-ayur-green/10">
                   <Play className="h-3.5 w-3.5 fill-ayur-green text-ayur-green ml-0.5" />
                 </span>
@@ -102,7 +98,6 @@ export default function Hero() {
           </FadeIn>
         </div>
       </div>
-      <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} />
     </section>
   );
 }
