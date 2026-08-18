@@ -81,6 +81,27 @@ function FormContent() {
     setIsSubmitting(true);
     
     try {
+      // 1. Direct submit to FormSubmit.co for aayurhealthclinic@gmail.com
+      await fetch(`https://formsubmit.co/ajax/${siteConfig.email}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `[New Appointment] ${formData.name}`,
+          _template: "table",
+          _captcha: "false",
+          "Patient Name": formData.name,
+          "Contact Phone": formData.phone,
+          "Patient Email": formData.email || "Not Provided",
+          "Requested Care / Therapy": formData.treatment,
+          "Preferred Date": formData.date,
+          "Health Concerns": formData.message || "None",
+        }),
+      });
+
+      // 2. Also submit to internal API route
       await fetch("/api/appointment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

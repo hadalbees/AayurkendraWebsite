@@ -63,6 +63,25 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
+      // 1. Direct submit to FormSubmit.co for aayurhealthclinic@gmail.com
+      await fetch(`https://formsubmit.co/ajax/${siteConfig.email}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `[General Website Inquiry] ${formData.name}`,
+          _template: "table",
+          _captcha: "false",
+          "Full Name": formData.name,
+          "Contact Phone": formData.phone,
+          "Email Address": formData.email || "Not Provided",
+          "Message": formData.message,
+        }),
+      });
+
+      // 2. Also submit to internal API route
       await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
