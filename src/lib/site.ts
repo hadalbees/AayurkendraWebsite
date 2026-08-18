@@ -6,7 +6,7 @@ export const siteConfig = {
   phone: "+91 91501 12757",
   phoneHref: "tel:+919150112757",
   whatsapp: "919150112757",
-  email: "info@aayurkendra.com",
+  email: "aayurhealthclinic@gmail.com",
   gstin: "33AICPJ529N1ZW",
   address: {
     line1: "No.23, Thally Road",

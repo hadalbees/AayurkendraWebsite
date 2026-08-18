@@ -14,7 +14,15 @@ import {
   MessageSquare,
   CheckCircle,
   ShieldAlert,
-  Award
+  Award,
+  Copy,
+  Check,
+  Sparkles,
+  ShieldCheck,
+  Clock,
+  ExternalLink,
+  User,
+  MessageCircle
 } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import SocialLinks from "@/components/ui/SocialLinks";
@@ -48,12 +56,21 @@ export default function ContactPage() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
     setIsSubmitting(true);
-    setTimeout(() => {
+
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+    } catch (err) {
+      console.error("Failed to submit contact enquiry:", err);
+    } finally {
       setIsSubmitting(false);
       setIsSubmitted(true);
       setFormData({
@@ -62,7 +79,7 @@ export default function ContactPage() {
         phone: "",
         message: "",
       });
-    }, 1500);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -222,14 +239,14 @@ export default function ContactPage() {
                   
                   {isSubmitted ? (
                     <div className="text-center py-10 space-y-4 flex flex-col items-center">
-                      <div className="h-14 w-14 bg-brown-accent/10 text-brown-accent dark:bg-brown-accent/15  rounded-full flex items-center justify-center animate-bounce">
+                      <div className="h-14 w-14 bg-ayur-green/10 text-ayur-green rounded-full flex items-center justify-center animate-bounce">
                         <CheckCircle className="h-8 w-8" />
                       </div>
-                      <h4 className="font-serif text-xl font-bold text-brown-dark">Inquiry Sent Successfully!</h4>
+                      <h4 className="font-serif text-xl font-bold text-brown-dark">Message Sent Successfully!</h4>
                       <p className="text-xs text-brown-dark/75 max-w-sm leading-relaxed font-light">
-                        Thank you for your message. Our hospital relations desk will review your message and contact you shortly.
+                        Thank you for reaching out. Your enquiry has been sent directly to <strong className="text-ayur-green font-semibold">{siteConfig.email}</strong>. Our hospital relations desk will contact you shortly.
                       </p>
-                      <button onClick={() => setIsSubmitted(false)} className="text-xs font-bold text-ayur-green hover:underline mt-2">
+                      <button onClick={() => setIsSubmitted(false)} className="text-xs font-bold text-ayur-green hover:underline mt-2 cursor-pointer">
                         Send Another Message
                       </button>
                     </div>

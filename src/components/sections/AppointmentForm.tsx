@@ -12,9 +12,16 @@ import {
   User, 
   Mail, 
   MessageSquare,
-  AlertCircle
+  AlertCircle,
+  Copy,
+  Check,
+  Sparkles,
+  ShieldCheck,
+  Clock,
+  ExternalLink
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { siteConfig } from "@/lib/site";
 
 function FormContent() {
   const searchParams = useSearchParams();
@@ -67,16 +74,23 @@ function FormContent() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
     setIsSubmitting(true);
-    // Simulate API submission
-    setTimeout(() => {
+    
+    try {
+      await fetch("/api/appointment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+    } catch (err) {
+      console.error("Failed to submit appointment:", err);
+    } finally {
       setIsSubmitting(false);
       setIsSubmitted(true);
-      // Reset form
       setFormData({
         name: "",
         phone: "",
@@ -85,7 +99,7 @@ function FormContent() {
         date: "",
         message: "",
       });
-    }, 1500);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -303,26 +317,31 @@ function FormContent() {
             key="success"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="text-center py-10 space-y-6 flex flex-col items-center"
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="text-center py-10 space-y-6 flex flex-col items-center max-w-lg mx-auto"
           >
             <div className="h-16 w-16 bg-ayur-green/10 text-ayur-green rounded-full flex items-center justify-center animate-bounce">
               <CheckCircle className="h-10 w-10" />
             </div>
             
-            <div className="space-y-2">
-              <h3 className="font-serif text-2xl font-semibold text-brown-dark">
-                Appointment Registered!
+            <div className="space-y-3">
+              <h3 className="font-serif text-2.5xl font-bold text-brown-dark">
+                Enquiry Sent Successfully!
               </h3>
-              <p className="text-sm font-light text-brown-muted max-w-md mx-auto leading-relaxed">
-                Thank you. Your consultation booking has been received. Our clinical desk will call you within 2-4 business hours to confirm your time slot.
+              <p className="text-sm font-light text-brown-muted leading-relaxed">
+                Thank you for contacting Aayur Kendra. Your appointment details have been sent directly to <strong className="text-ayur-green font-semibold">{siteConfig.email}</strong>.
+              </p>
+              <p className="text-xs text-brown-muted/80 pt-1">
+                Our clinical desk will call you shortly to confirm your consultation timing and physician availability.
               </p>
             </div>
 
             <button
+              type="button"
               onClick={() => setIsSubmitted(false)}
-              className="text-xs uppercase tracking-wider font-bold text-ayur-green hover:text-dark-green transition-colors cursor-pointer"
+              className="btn-primary text-xs py-3 px-6 cursor-pointer mt-4"
             >
-              Book Another Session
+              Book Another Appointment
             </button>
           </motion.div>
         )}

@@ -30,7 +30,7 @@ export default function PrivacyPolicy() {
             </p>
             <h3 className="font-serif text-lg font-bold text-theme-fg pt-2">3. Legal Disclaimers & Compliance</h3>
             <p>
-              Our treatments and therapies are executed by qualified practitioners holding B.A.M.S degrees. All patient registration databases are secure. If you have any inquiries, please contact our help desk at info@aayurkendra.com.
+              Our treatments and therapies are executed by qualified practitioners holding B.A.M.S degrees. All patient registration databases are secure. If you have any inquiries, please contact our help desk at aayurhealthclinic@gmail.com.
             </p>
           </div>
         </div>
