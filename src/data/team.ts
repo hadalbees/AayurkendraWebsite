@@ -13,6 +13,7 @@ export const teamData: TeamMember[] = [
   {
     slug: "jeevan",
     name: "Jeevan",
+    role: "Panchakarma Therapist",
     qualification: "Diploma in Ayurveda Nursing & Panchakarma Therapy",
     image: "/images/team/jeevan.jpg",
     bio: "Specializes in constitutional analysis, pulse diagnosis, and traditional Panchakarma detoxification regimens.",
@@ -21,6 +22,7 @@ export const teamData: TeamMember[] = [
   {
     slug: "sumith",
     name: "Sumith",
+    role: "Panchakarma Therapist",
     qualification: "Diploma in Ayurveda Nursing & Panchakarma Therapy",
     image: "/images/team/sumith.jpg",
     bio: "Focuses on stress relief, metabolic disorders, and combining therapeutic yoga with classical Ayurvedic diets.",
@@ -29,6 +31,7 @@ export const teamData: TeamMember[] = [
   {
     slug: "sreelekha",
     name: "Sreelekha",
+    role: "Panchakarma Therapist",
     qualification: "Diploma in Ayurveda Nursing & Panchakarma Therapy",
     image: "/images/team/sreelekha.jpg",
     bio: "Dedicated to female wellness, hormonal balance treatments, and traditional Ayurvedic maternal recovery.",
@@ -37,6 +40,7 @@ export const teamData: TeamMember[] = [
   {
     slug: "aswani",
     name: "Aswani",
+    role: "Panchakarma Therapist",
     qualification: "Diploma in Ayurveda Nursing & Panchakarma Therapy",
     image: "/images/team/aswani.jpg",
     bio: "Expert coordinator of therapeutic oil procedures, steam treatments, and orthopedic muscle rehabilitation.",

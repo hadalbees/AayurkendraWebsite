@@ -9,16 +9,16 @@ import { FadeIn } from "../ui/Motion";
 import SectionHeader from "../ui/SectionHeader";
 
 const therapyImages: Record<string, string> = {
-  "panchakarma": "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=800&auto=format&fit=crop",
-  "abhyangam": "https://images.unsplash.com/photo-1519823551278-64ac9283ca4e?q=80&w=800&auto=format&fit=crop",
+  "panchakarma": "/images/panchakarma.jpg",
+  "abhyangam": "/images/abhyangam.jpg",
   "shirodhara": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop",
   "takra-dhara": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
-  "pizhichil": "https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=800&auto=format&fit=crop",
-  "kizhi": "https://images.unsplash.com/photo-1519824141121-997672188db9?q=80&w=800&auto=format&fit=crop",
+  "pizhichil": "/images/pizhichil.jpg",
+  "kizhi": "/images/kizhi.jpg",
   "nasya": "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop",
   "basti": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop",
   "virechana": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
-  "netra-tarpanam": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800&auto=format&fit=crop",
+  "netra-tarpanam": "/images/ayurvedic-eye-care.jpg",
 };
 
 function formatDuration(duration: string) {

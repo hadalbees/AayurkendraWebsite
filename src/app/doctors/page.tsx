@@ -42,8 +42,9 @@ const medicalTeam = [
 ];
 
 const paramedicalTeam = [
-  { role: "Certified Therapists", desc: "Male and female therapists executing classical oil therapies and steam applications." },
-  { role: "Panchakarma Technicians", desc: "Technicians trained in sanitizing droni suites, herb boilings, and decoctions." },
+  { role: "Panchakarma Therapist", desc: "Male therapists executing classical oil therapies and steam applications for male patients." },
+  { role: "Panchakarma Therapist", desc: "Female therapists executing classical oil therapies and steam applications for female patients." },
+  { role: "Panchakarma Technicians", desc: "Male and female technicians trained in sanitizing droni suites, herb boilings, and decoctions." },
   { role: "Patient Care Assistants", desc: "Orderlies assisting inpatient mobility, comfort setups, and ward needs." },
   { role: "Compassionate Caregivers", desc: "Attendants ensuring personalized attention for children, seniors, and long-stay patients." },
 ];

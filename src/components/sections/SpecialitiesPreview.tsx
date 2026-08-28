@@ -32,9 +32,9 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 const specialityImages: Record<string, string> = {
   "womens-wellness": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop",
   "lifestyle-disease-management": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=800&auto=format&fit=crop",
-  "ayurvedic-eye-care": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800&auto=format&fit=crop",
+  "ayurvedic-eye-care": "/images/ayurvedic-eye-care.jpg",
   "ano-rectal-care": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=800&auto=format&fit=crop",
-  "pain-management": "https://images.unsplash.com/photo-1519823551278-64ac9283ca4e?q=80&w=800&auto=format&fit=crop",
+  "pain-management": "/images/pain-management.jpg",
   "spine-joint-care": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop",
   "neurological-rehabilitation": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop",
   "mental-wellness": "https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?q=80&w=800&auto=format&fit=crop",
