@@ -33,7 +33,7 @@ const longTestimonials = [
     location: "Krishnagiri",
     condition: "Ano-Rectal Care (Fistula Kshara Sutra)",
     rating: 5,
-    story: "I was highly apprehensive about surgical options for my fistula. Dr. Geetha recommended Kshara Sutra seton thread therapy. It was a minimally invasive outpatient procedure. The recovery was smooth with minimal pain, and I returned to work within 3 days. There has been no recurrence since then.",
+    story: "I was highly apprehensive about surgical options for my fistula. Dr. Dhanavanth recommended Kshara Sutra seton thread therapy. It was a minimally invasive outpatient procedure. The recovery was smooth with minimal pain, and I returned to work within 3 days. There has been no recurrence since then.",
   },
   {
     name: "Subhashini R.",
