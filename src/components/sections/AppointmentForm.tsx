@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/lib/site";
+import emailjs from "@emailjs/browser";
 
 function FormContent() {
   const searchParams = useSearchParams();
@@ -81,27 +82,46 @@ function FormContent() {
     setIsSubmitting(true);
     
     try {
-      // 1. Direct submit to FormSubmit.co for aayurhealthclinic@gmail.com
-      await fetch(`https://formsubmit.co/ajax/${siteConfig.email}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-        },
-        body: JSON.stringify({
-          _subject: `[New Appointment] ${formData.name}`,
-          _template: "table",
-          _captcha: "false",
-          "Patient Name": formData.name,
-          "Contact Phone": formData.phone,
-          "Patient Email": formData.email || "Not Provided",
-          "Requested Care / Therapy": formData.treatment,
-          "Preferred Date": formData.date,
-          "Health Concerns": formData.message || "None",
-        }),
-      });
+      // 1. Dispatch via EmailJS using environment variables
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || siteConfig.emailjs.serviceId;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || siteConfig.emailjs.templateId;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || siteConfig.emailjs.publicKey;
 
-      // 2. Also submit to internal API route
+      if (serviceId && templateId && publicKey) {
+        try {
+          const result = await emailjs.send(
+            serviceId,
+            templateId,
+            {
+              name: formData.name,
+              from_name: formData.name,
+              user_name: formData.name,
+              email: formData.email || "Not Provided",
+              from_email: formData.email || "Not Provided",
+              reply_to: formData.email || siteConfig.email,
+              phone: formData.phone,
+              phone_number: formData.phone,
+              contact_phone: formData.phone,
+              treatment: formData.treatment,
+              service: formData.treatment,
+              care: formData.treatment,
+              date: formData.date,
+              preferred_date: formData.date,
+              message: formData.message || "None",
+              notes: formData.message || "None",
+              details: formData.message || "None",
+              to_email: siteConfig.email,
+            },
+            publicKey
+          );
+          console.log("EmailJS Appointment Status:", result.status, result.text);
+        } catch (emailJsErr: unknown) {
+          const errObj = emailJsErr as { status?: number; text?: string };
+          console.warn("EmailJS Appointment Warning:", errObj?.status, errObj?.text || emailJsErr);
+        }
+      }
+
+      // 2. Submit to internal API route
       await fetch("/api/appointment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -347,10 +367,10 @@ function FormContent() {
             
             <div className="space-y-3">
               <h3 className="font-serif text-2.5xl font-bold text-brown-dark">
-                Enquiry Sent Successfully!
+                Appointment Requested Successfully!
               </h3>
               <p className="text-sm font-light text-brown-muted leading-relaxed">
-                Thank you for contacting Aayur Kendra. Your appointment details have been sent directly to <strong className="text-ayur-green font-semibold">{siteConfig.email}</strong>.
+                Thank you for contacting Aayur Kendra. Your consultation request details have been sent directly to <strong className="text-ayur-green font-semibold">{siteConfig.email}</strong>.
               </p>
               <p className="text-xs text-brown-muted/80 pt-1">
                 Our clinical desk will call you shortly to confirm your consultation timing and physician availability.

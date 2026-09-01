@@ -7,6 +7,11 @@ export const siteConfig = {
   phoneHref: "tel:+919150112757",
   whatsapp: "919150112757",
   email: "aayurhealthclinic@gmail.com",
+  emailjs: {
+    serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_mvq3wer",
+    templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_pzl0ofx",
+    publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "x0rnY-OaoB5Ef71xD",
+  },
   gstin: "33AICPJ529N1ZW",
   address: {
     line1: "No.23, Thally Road",
