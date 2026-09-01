@@ -133,9 +133,20 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-brown-dark/8 flex flex-col sm:flex-row items-center justify-between text-xs text-brown-light">
+        <div className="mt-12 pt-8 border-t border-brown-dark/8 flex flex-col md:flex-row items-center justify-between text-xs text-brown-muted gap-4">
           <p>© {currentYear} {siteConfig.name}. All rights reserved.</p>
-          <div className="mt-4 sm:mt-0 flex gap-6">
+          <p className="flex items-center gap-1 text-brown-muted">
+            Developed by{" "}
+            <a
+              href={siteConfig.developer.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-brown-dark hover:text-ayur-green transition-colors underline-offset-4 hover:underline"
+            >
+              {siteConfig.developer.name}
+            </a>
+          </p>
+          <div className="flex gap-6">
             <Link href="/privacy-policy" className="hover:text-ayur-green transition-colors flex items-center gap-1">
               <Shield className="h-3 w-3" />
               Privacy Policy
