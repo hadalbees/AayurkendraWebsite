@@ -193,9 +193,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-brown-dark/8 flex flex-col md:flex-row items-center justify-between text-xs text-brown-muted gap-4">
-          <p>
-            © {currentYear} {siteConfig.name}. All rights reserved.
-          </p>
+          <p>© {currentYear} {siteConfig.name}. All rights reserved.</p>
           <p className="flex items-center gap-1 text-brown-muted">
             Developed by{" "}
             <a
@@ -208,10 +206,7 @@ export default function Footer() {
             </a>
           </p>
           <div className="flex gap-6">
-            <Link
-              href="/privacy-policy"
-              className="hover:text-ayur-green transition-colors flex items-center gap-1"
-            >
+            <Link href="/privacy-policy" className="hover:text-ayur-green transition-colors flex items-center gap-1">
               <Shield className="h-3 w-3" />
               Privacy Policy
             </Link>
