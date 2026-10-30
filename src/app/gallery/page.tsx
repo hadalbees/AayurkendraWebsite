@@ -5,99 +5,125 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingWidgets from "@/components/ui/FloatingWidgets";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/Motion";
-import { Image as ImageIcon, Video, Layers, Users, Sparkles, Stethoscope, Play, X } from "lucide-react";
+import {
+  Image as ImageIcon,
+  Video,
+  Layers,
+  Users,
+  Sparkles,
+  Stethoscope,
+  Play,
+  X,
+} from "lucide-react";
 import PlaceholderImage from "@/components/ui/PlaceholderImage";
 import Link from "next/link";
+import Image from "next/image";
 
-type GalleryCategory = "all" | "treatments" | "infrastructure" | "doctor-activities" | "events" | "videos";
+type GalleryCategory =
+  | "all"
+  | "treatments"
+  | "infrastructure"
+  | "doctor-activities"
+  | "events"
+  | "videos";
 
 const galleryItems = [
+  //demo
   {
-    title: "Hospital Main Entrance & Greenery",
+    title: "South Indian Women Achievers Award",
     category: "infrastructure",
     type: "photo",
-    description: "Hospital main entrance and calming garden landscaping supporting stress-free recovery.",
+    description:
+      "Received the South Indian Women Achievers Award from SIWAA in recognition of outstanding achievements, dedication, and contributions to professional growth and women’s empowerment.",
   },
-  {
-    title: "Traditional Panchakarma Treatment Room",
-    category: "treatments",
-    type: "photo",
-    description: "Hygienic treatment suite equipped with a classical wooden droni table and steam chamber.",
-  },
-  {
-    title: "Clinical Consultation Room Setup",
-    category: "infrastructure",
-    type: "photo",
-    description: "Private chamber for pulse analysis, body constitution mapping, and patient counseling.",
-  },
-  {
-    title: "Ayurvedic Pharmacy Dispensing",
-    category: "infrastructure",
-    type: "photo",
-    description: "dispensing bay stocked with certified organic herbal formulations and medicated oils.",
-  },
-  {
-    title: "Free Medical Wellness Camp",
-    category: "doctor-activities",
-    type: "photo",
-    description: "Dr. Geetha Jayapal consulting patients at a rural health awareness camp.",
-  },
-  {
-    title: "Clinical Mentorship & Training Session",
-    category: "doctor-activities",
-    type: "photo",
-    description: "Dr. Geetha Jayapal teaching junior Ayurvedic physicians and therapists clinical protocols.",
-  },
-  {
-    title: "Women's Health & PCOS Awareness Seminar",
-    category: "events",
-    type: "photo",
-    description: "Community health event discussing Ayurvedic solutions for hormonal wellness.",
-  },
-  {
-    title: "Patient Awareness and Yoga Camp",
-    category: "events",
-    type: "photo",
-    description: "Group therapeutic breathing and yoga session organized for inpatient groups.",
-  },
-  {
-    title: "Dr. Geetha Jayapal Founder Reel",
-    category: "videos",
-    type: "video",
-    description: "Message from our founder discussing clinical methodology and Ayurvedic heritage.",
-    videoUrl: "/videos/founder.mp4"
-  },
-  {
-    title: "Shirodhara Therapy Process Demo",
-    category: "videos",
-    type: "video",
-    description: "Demonstration of pouring medicated oils onto the third eye region to soothe the nervous system.",
-    videoUrl: "/videos/founder.mp4"
-  },
-  {
-    title: "Panchakarma Daily Routine Reel",
-    category: "videos",
-    type: "video",
-    description: "Short highlight reel showcasing inpatient daily routine and wellness care.",
-    videoUrl: "/videos/founder.mp4"
-  }
+  // {
+  //   title: "Hospital Main Entrance & Greenery",
+  //   category: "infrastructure",
+  //   type: "photo",
+  //   description: "Hospital main entrance and calming garden landscaping supporting stress-free recovery.",
+  // },
+  // {
+  //   title: "Traditional Panchakarma Treatment Room",
+  //   category: "treatments",
+  //   type: "photo",
+  //   description: "Hygienic treatment suite equipped with a classical wooden droni table and steam chamber.",
+  // },
+  // {
+  //   title: "Clinical Consultation Room Setup",
+  //   category: "infrastructure",
+  //   type: "photo",
+  //   description: "Private chamber for pulse analysis, body constitution mapping, and patient counseling.",
+  // },
+  // {
+  //   title: "Ayurvedic Pharmacy Dispensing",
+  //   category: "infrastructure",
+  //   type: "photo",
+  //   description: "dispensing bay stocked with certified organic herbal formulations and medicated oils.",
+  // },
+  // {
+  //   title: "Free Medical Wellness Camp",
+  //   category: "doctor-activities",
+  //   type: "photo",
+  //   description: "Dr. Geetha Jayapal consulting patients at a rural health awareness camp.",
+  // },
+  // {
+  //   title: "Clinical Mentorship & Training Session",
+  //   category: "doctor-activities",
+  //   type: "photo",
+  //   description: "Dr. Geetha Jayapal teaching junior Ayurvedic physicians and therapists clinical protocols.",
+  // },
+  // {
+  //   title: "Women's Health & PCOS Awareness Seminar",
+  //   category: "events",
+  //   type: "photo",
+  //   description: "Community health event discussing Ayurvedic solutions for hormonal wellness.",
+  // },
+  // {
+  //   title: "Patient Awareness and Yoga Camp",
+  //   category: "events",
+  //   type: "photo",
+  //   description: "Group therapeutic breathing and yoga session organized for inpatient groups.",
+  // },
+  // {
+  //   title: "Dr. Geetha Jayapal Founder Reel",
+  //   category: "videos",
+  //   type: "video",
+  //   description: "Message from our founder discussing clinical methodology and Ayurvedic heritage.",
+  //   videoUrl: "/videos/founder.mp4"
+  // },
+  // {
+  //   title: "Shirodhara Therapy Process Demo",
+  //   category: "videos",
+  //   type: "video",
+  //   description: "Demonstration of pouring medicated oils onto the third eye region to soothe the nervous system.",
+  //   videoUrl: "/videos/founder.mp4"
+  // },
+  // {
+  //   title: "Panchakarma Daily Routine Reel",
+  //   category: "videos",
+  //   type: "video",
+  //   description: "Short highlight reel showcasing inpatient daily routine and wellness care.",
+  //   videoUrl: "/videos/founder.mp4"
+  // }
 ];
 
 export default function GalleryPage() {
   const [activeTab, setActiveTab] = useState<GalleryCategory>("all");
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
-  const filteredItems = activeTab === "all"
-    ? galleryItems
-    : galleryItems.filter(item => item.category === activeTab);
+  const filteredItems =
+    activeTab === "all"
+      ? galleryItems
+      : galleryItems.filter((item) => item.category === activeTab);
 
   // Gallery Schema Markup
   const gallerySchema = {
     "@context": "https://schema.org",
     "@type": "ImageGallery",
-    "name": "Aayur Kendra Hospital Gallery",
-    "description": "Visual records of our Ayurvedic treatment suites, inpatient infrastructure, healthcare events, and founder message videos.",
-    "url": "https://aayurkendra.com/gallery"
+    name: "Aayur Kendra Hospital Gallery",
+    description:
+      "Visual records of our Ayurvedic treatment suites, inpatient infrastructure, healthcare events, and founder message videos.",
+    url: "https://aayurkendra.com/gallery",
   };
 
   return (
@@ -113,10 +139,14 @@ export default function GalleryPage() {
         <section className="bg-gradient-to-br from-cream-light to-white text-brown-dark py-20 relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brown-muted via-transparent to-transparent pointer-events-none" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
-            
             {/* Breadcrumb */}
             <nav className="flex items-center justify-center space-x-2 text-xs uppercase tracking-wider text-brown-muted mb-2">
-              <Link href="/" className="hover:text-ayur-green transition-colors">Home</Link>
+              <Link
+                href="/"
+                className="hover:text-ayur-green transition-colors"
+              >
+                Home
+              </Link>
               <span>/</span>
               <span className="text-brown-dark font-medium">Gallery</span>
             </nav>
@@ -128,7 +158,8 @@ export default function GalleryPage() {
               Hospital Gallery
             </h1>
             <p className="text-sm sm:text-base font-light text-brown-muted max-w-2xl mx-auto leading-relaxed">
-              Browse through visual records of our clinical therapies, inpatient infrastructure, healthcare events, and patient recovery journeys.
+              Browse through visual records of our clinical therapies, inpatient
+              infrastructure, healthcare events, and patient recovery journeys.
             </p>
           </div>
         </section>
@@ -136,14 +167,21 @@ export default function GalleryPage() {
         {/* Filter & Gallery Grid */}
         <section className="py-20 bg-cream-bg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            
             {/* Filter Buttons */}
             <div className="flex flex-wrap items-center justify-center gap-3 border-b border-brown-dark/8 pb-6">
               {[
                 { id: "all", label: "All", icon: Layers },
                 { id: "treatments", label: "Treatment Rooms", icon: Sparkles },
-                { id: "infrastructure", label: "Hospital Photos", icon: ImageIcon },
-                { id: "doctor-activities", label: "Doctor Activities", icon: Stethoscope },
+                {
+                  id: "infrastructure",
+                  label: "Hospital Photos",
+                  icon: ImageIcon,
+                },
+                {
+                  id: "doctor-activities",
+                  label: "Doctor Activities",
+                  icon: Stethoscope,
+                },
                 { id: "events", label: "Events", icon: Users },
                 { id: "videos", label: "Videos & Reels", icon: Video },
               ].map((btn) => {
@@ -180,13 +218,23 @@ export default function GalleryPage() {
                     }`}
                   >
                     <div className="relative">
-                      <PlaceholderImage
+                      {/* <PlaceholderImage
                         variant="gallery"
                         icon={item.type === "video" ? Video : ImageIcon}
-                        label={item.type === "video" ? "Play Video" : "View Photo"}
+                        label={
+                          item.type === "video" ? "Play Video" : "View Photo"
+                        }
                         className="aspect-[4/3] w-full"
+                      /> */}
+
+                      <Image
+                        src="/images/siwaa-award.jpeg"
+                        alt="South Indian Women Achievers Award"
+                        width={600}
+                        height={450}
+                        className="aspect-[4/3] w-full object-cover"
                       />
-                      
+
                       {item.type === "video" && (
                         <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition-colors z-20">
                           <span className="h-12 w-12 rounded-full bg-white/95 text-ayur-green flex items-center justify-center shadow-lg">
@@ -213,7 +261,6 @@ export default function GalleryPage() {
                 </StaggerItem>
               ))}
             </StaggerContainer>
-
           </div>
         </section>
       </main>
@@ -227,7 +274,7 @@ export default function GalleryPage() {
           >
             <X className="h-6 w-6" />
           </button>
-          
+
           <div className="w-full max-w-4xl aspect-video bg-black rounded-2xl overflow-hidden relative shadow-2xl">
             <video
               src={activeVideo}

@@ -20,7 +20,9 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-brown-muted leading-relaxed font-light">
-              {siteConfig.tagline}. Authentic Ayurveda, Panchakarma, and integrated wellness under expert medical supervision for 25+ years.
+              {siteConfig.tagline}. Authentic Ayurveda, Panchakarma, and
+              integrated wellness under expert medical supervision for 25+
+              years.
             </p>
             <SocialLinks variant="default" />
             <span className="inline-block text-[10px] uppercase tracking-wider font-medium text-brown-muted bg-white px-3 py-1.5 rounded-lg border border-brown-dark/8">
@@ -29,7 +31,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-serif text-base font-semibold text-brown-dark mb-4">Quick Links</h3>
+            <h3 className="font-serif text-base font-semibold text-brown-dark mb-4">
+              Quick Links
+            </h3>
             <ul className="space-y-2 text-xs sm:text-sm text-brown-muted">
               {[
                 { name: "Home", href: "/" },
@@ -39,11 +43,15 @@ export default function Footer() {
                 { name: "Doctors", href: "/doctors" },
                 { name: "Facilities", href: "/facilities" },
                 { name: "Gallery", href: "/gallery" },
+                { name: "Reviews", href: "/testimonials" },
                 { name: "Contact", href: "/contact" },
                 { name: "Book Appointment", href: "/appointment" },
               ].map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-ayur-green transition-colors">
+                  <Link
+                    href={link.href}
+                    className="hover:text-ayur-green transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -52,22 +60,57 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-serif text-base font-semibold text-brown-dark mb-4">Specialities</h3>
+            <h3 className="font-serif text-base font-semibold text-brown-dark mb-4">
+              Specialities
+            </h3>
             <ul className="space-y-2 text-xs sm:text-sm text-brown-muted">
               {[
-                { name: "Women's Wellness", href: "/specialities/womens-wellness" },
-                { name: "Lifestyle Disease", href: "/specialities/lifestyle-disease-management" },
-                { name: "Ayurvedic Eye Care", href: "/specialities/ayurvedic-eye-care" },
-                { name: "Ano Rectal Care", href: "/specialities/ano-rectal-care" },
-                { name: "Pain Management", href: "/specialities/pain-management" },
-                { name: "Spine & Joint Care", href: "/specialities/spine-joint-care" },
-                { name: "Neurological Rehab", href: "/specialities/neurological-rehabilitation" },
-                { name: "Mental Wellness", href: "/specialities/mental-wellness" },
-                { name: "Post Operative Care", href: "/specialities/post-operative-care" },
-                { name: "Aesthetic Medicine", href: "/specialities/aesthetic-medicine" },
+                {
+                  name: "Women's Wellness",
+                  href: "/specialities/womens-wellness",
+                },
+                {
+                  name: "Lifestyle Disease",
+                  href: "/specialities/lifestyle-disease-management",
+                },
+                {
+                  name: "Ayurvedic Eye Care",
+                  href: "/specialities/ayurvedic-eye-care",
+                },
+                {
+                  name: "Ano Rectal Care",
+                  href: "/specialities/ano-rectal-care",
+                },
+                {
+                  name: "Pain Management",
+                  href: "/specialities/pain-management",
+                },
+                {
+                  name: "Spine & Joint Care",
+                  href: "/specialities/spine-joint-care",
+                },
+                {
+                  name: "Neurological Rehab",
+                  href: "/specialities/neurological-rehabilitation",
+                },
+                {
+                  name: "Mental Wellness",
+                  href: "/specialities/mental-wellness",
+                },
+                {
+                  name: "Post Operative Care",
+                  href: "/specialities/post-operative-care",
+                },
+                {
+                  name: "Aesthetic Medicine",
+                  href: "/specialities/aesthetic-medicine",
+                },
               ].map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-ayur-green transition-colors">
+                  <Link
+                    href={link.href}
+                    className="hover:text-ayur-green transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -76,7 +119,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-serif text-base font-semibold text-brown-dark mb-4">Therapies</h3>
+            <h3 className="font-serif text-base font-semibold text-brown-dark mb-4">
+              Therapies
+            </h3>
             <ul className="space-y-2 text-xs sm:text-sm text-brown-muted">
               {[
                 { name: "Panchakarma", href: "/therapies/panchakarma" },
@@ -91,7 +136,10 @@ export default function Footer() {
                 { name: "Netra Tarpanam", href: "/therapies/netra-tarpanam" },
               ].map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="hover:text-ayur-green transition-colors">
+                  <Link
+                    href={link.href}
+                    className="hover:text-ayur-green transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -100,7 +148,9 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-serif text-base font-semibold text-brown-dark mb-4">Contact</h3>
+            <h3 className="font-serif text-base font-semibold text-brown-dark mb-4">
+              Contact
+            </h3>
             <ul className="space-y-3 text-xs sm:text-sm text-brown-muted font-light">
               <li className="flex items-start gap-2.5">
                 <MapPin className="h-4 w-4 text-ayur-green shrink-0 mt-0.5" />
@@ -111,13 +161,19 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="h-4 w-4 text-ayur-green shrink-0" />
-                <a href={siteConfig.phoneHref} className="hover:text-ayur-green transition-colors">
+                <a
+                  href={siteConfig.phoneHref}
+                  className="hover:text-ayur-green transition-colors"
+                >
                   {siteConfig.phone}
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="h-4 w-4 text-ayur-green shrink-0" />
-                <a href={`mailto:${siteConfig.email}`} className="hover:text-ayur-green transition-colors">
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="hover:text-ayur-green transition-colors"
+                >
                   {siteConfig.email}
                 </a>
               </li>
@@ -126,21 +182,43 @@ export default function Footer() {
                 <span>{siteConfig.hours.weekdays}</span>
               </li>
             </ul>
-            <Link href="/appointment" className="btn-primary text-xs py-2.5 px-4 w-full text-center flex justify-center">
+            <Link
+              href="/appointment"
+              className="btn-primary text-xs py-2.5 px-4 w-full text-center flex justify-center"
+            >
               <Calendar className="h-3.5 w-3.5 mr-1" />
               Book Appointment
             </Link>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-brown-dark/8 flex flex-col sm:flex-row items-center justify-between text-xs text-brown-light">
-          <p>© {currentYear} {siteConfig.name}. All rights reserved.</p>
-          <div className="mt-4 sm:mt-0 flex gap-6">
-            <Link href="/privacy-policy" className="hover:text-ayur-green transition-colors flex items-center gap-1">
+        <div className="mt-12 pt-8 border-t border-brown-dark/8 flex flex-col md:flex-row items-center justify-between text-xs text-brown-muted gap-4">
+          <p>
+            © {currentYear} {siteConfig.name}. All rights reserved.
+          </p>
+          <p className="flex items-center gap-1 text-brown-muted">
+            Developed by{" "}
+            <a
+              href={siteConfig.developer.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-brown-dark hover:text-ayur-green transition-colors underline-offset-4 hover:underline"
+            >
+              {siteConfig.developer.name}
+            </a>
+          </p>
+          <div className="flex gap-6">
+            <Link
+              href="/privacy-policy"
+              className="hover:text-ayur-green transition-colors flex items-center gap-1"
+            >
               <Shield className="h-3 w-3" />
               Privacy Policy
             </Link>
-            <Link href="/terms-and-conditions" className="hover:text-ayur-green transition-colors flex items-center gap-1">
+            <Link
+              href="/terms-and-conditions"
+              className="hover:text-ayur-green transition-colors flex items-center gap-1"
+            >
               <Heart className="h-3 w-3" />
               Terms
             </Link>

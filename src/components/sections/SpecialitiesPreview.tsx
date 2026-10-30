@@ -4,17 +4,17 @@ import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { specialitiesData } from "@/data/specialities";
-import { 
-  ArrowRight, 
-  Heart, 
-  Activity, 
-  Eye, 
-  ShieldAlert, 
-  Sparkles, 
-  Stethoscope, 
+import {
+  ArrowRight,
+  Heart,
+  Activity,
+  Eye,
+  ShieldAlert,
+  Sparkles,
+  Stethoscope,
   Brain,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
 } from "lucide-react";
 import { FadeIn } from "../ui/Motion";
 import SectionHeader from "../ui/SectionHeader";
@@ -30,16 +30,23 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 const specialityImages: Record<string, string> = {
-  "womens-wellness": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop",
-  "lifestyle-disease-management": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=800&auto=format&fit=crop",
+  "womens-wellness":
+    "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop",
+  "lifestyle-disease-management":
+    "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=800&auto=format&fit=crop",
   "ayurvedic-eye-care": "/images/ayurvedic-eye-care.jpg",
-  "ano-rectal-care": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=800&auto=format&fit=crop",
+  "ano-rectal-care":
+    "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=800&auto=format&fit=crop",
   "pain-management": "/images/pain-management.jpg",
-  "spine-joint-care": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop",
-  "neurological-rehabilitation": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop",
-  "mental-wellness": "https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?q=80&w=800&auto=format&fit=crop",
-  "post-operative-care": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop",
-  "aesthetic-medicine": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
+  "spine-joint-care":
+    "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop",
+  "neurological-rehabilitation": "/images/neuro_rehab.png",
+  "mental-wellness":
+    "https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?q=80&w=800&auto=format&fit=crop",
+  "post-operative-care":
+    "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop",
+  "aesthetic-medicine":
+    "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
 };
 
 export default function SpecialitiesPreview() {
@@ -81,9 +88,11 @@ export default function SpecialitiesPreview() {
   }, [isHovered]);
 
   return (
-    <section id="specialities" className="py-20 bg-white relative overflow-hidden border-t border-brown-dark/5">
+    <section
+      id="specialities"
+      className="py-20 bg-white relative overflow-hidden border-t border-brown-dark/5"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="max-w-2xl space-y-3">
@@ -95,11 +104,12 @@ export default function SpecialitiesPreview() {
                 Our Medical Specialities
               </h2>
               <p className="text-sm sm:text-base font-light text-brown-muted mt-3 leading-relaxed">
-                Dedicated healthcare wings combining authentic pulse diagnosis and traditional therapies with modern clinical standards.
+                Dedicated healthcare wings combining authentic pulse diagnosis
+                and traditional therapies with modern clinical standards.
               </p>
             </FadeIn>
           </div>
-          
+
           <div className="flex items-center gap-4">
             <Link
               href="/specialities"
@@ -108,7 +118,7 @@ export default function SpecialitiesPreview() {
               View All Specialities
               <ArrowRight className="h-4 w-4" />
             </Link>
-            
+
             {/* Carousel Buttons */}
             <div className="hidden sm:flex items-center gap-2">
               <button
@@ -130,7 +140,7 @@ export default function SpecialitiesPreview() {
         </div>
 
         {/* Carousel Container */}
-        <div 
+        <div
           className="relative overflow-hidden"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
@@ -143,23 +153,25 @@ export default function SpecialitiesPreview() {
             {specialitiesData.map((speciality) => {
               const Icon = iconMap[speciality.iconName] || Activity;
               return (
-                <div 
-                  key={speciality.slug} 
+                <div
+                  key={speciality.slug}
                   className="w-full lg:w-[calc(50%-12px)] shrink-0 snap-start group"
                 >
                   <div className="relative bg-cream-bg/40 border border-brown-dark/8 rounded-3xl overflow-hidden flex flex-col sm:flex-row h-full shadow-sm hover:shadow-md transition-all duration-300">
-                    
                     {/* Left: Image (or top on mobile) */}
                     <div className="relative w-full sm:w-2/5 min-h-[200px] sm:min-h-full bg-cream-muted overflow-hidden">
                       <Image
-                        src={specialityImages[speciality.slug] || "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop"}
+                        src={
+                          specialityImages[speciality.slug] ||
+                          "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop"
+                        }
                         alt={speciality.title}
                         fill
                         sizes="(max-w-640px) 100vw, 25vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         unoptimized={true}
                       />
-                      
+
                       {/* Floating Icon badge on top-left of image */}
                       <div className="absolute top-4 left-4 p-2 bg-white/95 backdrop-blur-sm text-ayur-green rounded-xl shadow-sm z-10">
                         <Icon className="h-5 w-5" />
@@ -187,11 +199,11 @@ export default function SpecialitiesPreview() {
                         </div>
                       </div>
                     </div>
-                    
-                    <Link 
-                      href={`/specialities/${speciality.slug}`} 
-                      className="absolute inset-0 z-10" 
-                      aria-label={`Learn more about ${speciality.title}`} 
+
+                    <Link
+                      href={`/specialities/${speciality.slug}`}
+                      className="absolute inset-0 z-10"
+                      aria-label={`Learn more about ${speciality.title}`}
                     />
                   </div>
                 </div>

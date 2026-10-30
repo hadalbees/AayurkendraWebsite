@@ -27,6 +27,8 @@ import {
 import { siteConfig } from "@/lib/site";
 import SocialLinks from "@/components/ui/SocialLinks";
 
+import emailjs from "@emailjs/browser";
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -63,25 +65,43 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      // 1. Direct submit to FormSubmit.co for aayurhealthclinic@gmail.com
-      await fetch(`https://formsubmit.co/ajax/${siteConfig.email}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-        },
-        body: JSON.stringify({
-          _subject: `[General Website Inquiry] ${formData.name}`,
-          _template: "table",
-          _captcha: "false",
-          "Full Name": formData.name,
-          "Contact Phone": formData.phone,
-          "Email Address": formData.email || "Not Provided",
-          "Message": formData.message,
-        }),
-      });
+      // 1. Dispatch via EmailJS using environment variables
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || siteConfig.emailjs.serviceId;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || siteConfig.emailjs.templateId;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || siteConfig.emailjs.publicKey;
 
-      // 2. Also submit to internal API route
+      if (serviceId && templateId && publicKey) {
+        try {
+          const result = await emailjs.send(
+            serviceId,
+            templateId,
+            {
+              name: formData.name,
+              from_name: formData.name,
+              user_name: formData.name,
+              email: formData.email || "Not Provided",
+              from_email: formData.email || "Not Provided",
+              reply_to: formData.email || siteConfig.email,
+              phone: formData.phone,
+              phone_number: formData.phone,
+              contact_phone: formData.phone,
+              message: formData.message,
+              notes: formData.message,
+              details: formData.message,
+              treatment: "General Website Contact Form",
+              date: new Date().toLocaleDateString("en-IN"),
+              to_email: siteConfig.email,
+            },
+            publicKey
+          );
+          console.log("EmailJS Delivery Status:", result.status, result.text);
+        } catch (emailJsErr: unknown) {
+          const errObj = emailJsErr as { status?: number; text?: string };
+          console.warn("EmailJS Delivery Warning:", errObj?.status, errObj?.text || emailJsErr);
+        }
+      }
+
+      // 2. Submit to internal API route
       await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -263,7 +283,7 @@ export default function ContactPage() {
                       </div>
                       <h4 className="font-serif text-xl font-bold text-brown-dark">Message Sent Successfully!</h4>
                       <p className="text-xs text-brown-dark/75 max-w-sm leading-relaxed font-light">
-                        Thank you for reaching out. Your enquiry has been sent directly to <strong className="text-ayur-green font-semibold">{siteConfig.email}</strong>. Our hospital relations desk will contact you shortly.
+                        Thank you for reaching out. Your enquiry details have been sent directly to <strong className="text-ayur-green font-semibold">{siteConfig.email}</strong>. Our hospital team will contact you shortly.
                       </p>
                       <button onClick={() => setIsSubmitted(false)} className="text-xs font-bold text-ayur-green hover:underline mt-2 cursor-pointer">
                         Send Another Message
