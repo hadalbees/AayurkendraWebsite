@@ -17,9 +17,7 @@ const therapyImages: Record<string, string> = {
   kizhi: "/images/kizhi.jpg",
   nasya: "/images/nasyam.jpeg",
   basti: "/images/basti.jpeg",
-  virechana:
-    "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
-  "netra-tarpanam": "/images/netra-tarpanam.jpeg",
+  virechana: "/images/virechana.png",
 };
 
 function formatDuration(duration: string) {
