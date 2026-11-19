@@ -55,5 +55,27 @@ export const doctorsData: Doctor[] = [
       "Active member of the Association of Shalya Tantra (Ayurvedic Surgeons of India).",
       "Presented clinical papers on advanced Kshara Sutra techniques in national medical symposiums."
     ]
+  },
+  {
+    slug: "dr-apeetha-srinivas",
+    name: "Dr. Apeetha Srinivas",
+    title: "Ayurvedic physician",
+    qualification: "B.A.M.S, M.D. (Ayurveda – Kayachikitsa)",
+    experience: "7+ Years",
+    speciality: "Ayurveda – Kayachikitsa",
+    image: "/images/team/dr-apeetha.jpeg",
+    bio: [
+      "Dr. Apeetha Srinivas, BAMS, M.D. (Ayurveda – Kayachikitsa), DNV, is an Ayurvedic physician and MD specialist with clinical experience since 2018.",
+      "She specializes in general medicine, chronic lifestyle disorders, digestive and metabolic health, women's wellness, fertility care, and Panchakarma.",
+      "She also has experience in telemedicine, clinical research, and academic publications."
+    ],
+    videoUrl: "",
+    achievements: [
+      "Silver Medialist in M.D",
+      "Specialized training in Nadi Vigyan",
+      "Clinical experience across OPD, IPD, and Panchakarma",
+      // "Contributions to clinical research and academic publications",
+      "Expertise in chronic and complex health conditions"
+    ]
   }
 ];
