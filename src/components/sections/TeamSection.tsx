@@ -47,9 +47,11 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
               {member.name}
             </h3>
           )}
-          <p className="text-xs uppercase font-bold tracking-wider text-ayur-green">
-            {member.role}
-          </p>
+          {member.role && (
+            <p className="text-xs uppercase font-bold tracking-wider text-ayur-green">
+              {member.role}
+            </p>
+          )}
           
           <div className="space-y-1.5 pt-1.5">
             {member.qualification && (

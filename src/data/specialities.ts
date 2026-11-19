@@ -8,6 +8,7 @@ export interface Speciality {
   benefits: string[];
   treatmentProcess: string[];
   faqs: { question: string; answer: string }[];
+  consultantSlug?: string;
 }
 
 export const specialitiesData: Speciality[] = [
@@ -73,9 +74,9 @@ export const specialitiesData: Speciality[] = [
     ],
     treatmentProcess: [
       "Evaluation of lifestyle triggers, dietary errors, and stress levels",
-      "Metabolic stimulation through Udwarthanam (dry herbal powder massage)",
+      "Metabolic stimulation",
       "Internal detoxification using Virechana (purgation) and Basti (enema)",
-      "Prescription of specific single herbs (like Haridra, Amalaki, Guggulu)",
+      "Prescription & customized medication",
       "Structuring customized daily activity, diet, and yoga routines"
     ],
     faqs: [
@@ -134,6 +135,7 @@ export const specialitiesData: Speciality[] = [
     tagline: "Gentle, Non-Surgical Solutions for Sensitive Disorders",
     iconName: "ShieldAlert",
     overview: "Ano-rectal conditions like piles, fissures, and fistulas cause immense physical discomfort and psychological distress. Conventional surgeries often carry risks of recurrence or incontinence. Aayur Kendra offers specialized Ayurvedic ano-rectal care, focusing on bowel regulation, local anti-inflammatory therapies, and the globally acclaimed, minimally invasive Kshara Sutra treatment for complex fistulas.",
+    consultantSlug: "dr-dhanavanth",
     conditionsTreated: [
       "Hemorrhoids (Piles) - Bleeding & Non-Bleeding",
       "Anal Fissure (Acute & Chronic)",
@@ -149,11 +151,11 @@ export const specialitiesData: Speciality[] = [
       "Gentle post-treatment recovery with minimal interruption to daily life"
     ],
     treatmentProcess: [
-      "Private and compassionate clinical examination",
+      "Detailed clinical examination & evaluation",
       "Local healing therapies including Avagaha Sweda (warm herbal sitz bath)",
       "Kshara Karma (application of alkaline herbal paste for controlled cauterization)",
       "Kshara Sutra (medicated seton ligation) for fistulas/sinuses",
-      "Dietary modifications to prevent constipation and strain"
+      "Dietary modifications to prevent recurrence"
     ],
     faqs: [
       {
@@ -191,7 +193,7 @@ export const specialitiesData: Speciality[] = [
       "Nadi Pariksha and trigger-point physical examination",
       "Localized warm oil therapy (Kati Basti, Griva Basti)",
       "Patra Pinda Sweda (hot herbal bolus massage) to release tension",
-      "Internal administration of anti-inflammatory herbs (Shallaki, Guggulu)",
+      "Internal administration of anti-inflammatory herbs",
       "Gentle stretching exercises and ergonomic coaching"
     ],
     faqs: [
@@ -230,7 +232,7 @@ export const specialitiesData: Speciality[] = [
       "Degenerative skeletal assessment and constitution mapping",
       "Janu Basti (for knees), Kati Basti (for lower back), or Griva Basti (for neck)",
       "Pizhichil (royal oil bath) and Njavarakizhi (nourishing rice-bolus massage)",
-      "Nourishing herbal decoctions internally to rebuild bone density (Asthi Dhatu)",
+      "Nourishing herbal decoctions internally to rebuild damaged tissues",
       "Postural alignment advising and targeted yoga postures"
     ],
     faqs: [
@@ -306,7 +308,7 @@ export const specialitiesData: Speciality[] = [
     ],
     treatmentProcess: [
       "Personalized counseling sessions using CBT and client-centered models",
-      "Satvajaya Chikitsa (Ayurvedic therapy for mental restraint and control)",
+      "Satvajaya Chikitsa (Ayurvedic therapy & internal medication for mental restraint and control)",
       "Mindfulness training, pranayama, and grounding meditation",
       "Coordination with calming physical therapies like Shirodhara",
       "Assistance in identifying and changing unhealthy lifestyle habits"

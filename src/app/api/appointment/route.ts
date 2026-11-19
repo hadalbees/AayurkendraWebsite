@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { siteConfig } from "@/lib/site";
+import nodemailer from "nodemailer";
 
 export async function POST(request: Request) {
   try {
@@ -18,62 +19,98 @@ export async function POST(request: Request) {
     console.log(`Message      : ${message || "N/A"}`);
     console.log("========================================");
 
-    // 1. Dispatch via FormSubmit.co directly to targetEmail (aayurhealthclinic@gmail.com)
-    try {
-      await fetch(`https://formsubmit.co/ajax/${targetEmail}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-        },
-        body: JSON.stringify({
-          _subject: `[New Appointment] ${name} - ${treatment}`,
-          _template: "table",
-          _captcha: "false",
-          "Patient Name": name,
-          "Contact Phone": phone,
-          "Patient Email": email || "Not Provided",
-          "Requested Care / Therapy": treatment,
-          "Preferred Date": date,
-          "Health Notes": message || "None",
-        }),
-      });
-    } catch (err) {
-      console.error("FormSubmit dispatch error:", err);
-    }
+    const submissionTime = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
 
-    // 2. Dispatch via Web3Forms if key is available
-    const accessKey = process.env.WEB3FORMS_ACCESS_KEY || process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "";
-    if (accessKey) {
+    // HTML Email Template
+    const htmlContent = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #FDFBF7; color: #2C1810; margin: 0; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 16px; border: 1px solid rgba(44, 24, 16, 0.1); overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .header { background: #2E5A44; color: #ffffff; padding: 24px; text-align: center; }
+        .header h2 { margin: 0; font-size: 22px; font-weight: 600; }
+        .header p { margin: 4px 0 0 0; font-size: 13px; opacity: 0.85; }
+        .content { padding: 28px; }
+        .table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+        .table td { padding: 12px 14px; border-bottom: 1px solid #F3EDE4; font-size: 14px; }
+        .table td.label { font-weight: 600; color: #6E5D4F; width: 38%; background: #FAF7F2; border-radius: 6px; }
+        .table td.value { color: #2C1810; }
+        .badge { display: inline-block; background: #2E5A44; color: white; padding: 4px 10px; border-radius: 99px; font-size: 12px; font-weight: 600; }
+        .footer { background: #FAF7F2; padding: 16px; text-align: center; font-size: 12px; color: #6E5D4F; border-top: 1px solid #F3EDE4; }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="header">
+          <h2>${siteConfig.name}</h2>
+          <p>New Appointment Consultation Booking</p>
+        </div>
+        <div class="content">
+          <p style="font-size: 15px; margin-top: 0;">A new consultation booking request has been submitted:</p>
+          <table class="table">
+            <tr><td class="label">Patient Name</td><td class="value"><strong>${name}</strong></td></tr>
+            <tr><td class="label">Contact Phone</td><td class="value"><a href="tel:${phone}">${phone}</a></td></tr>
+            <tr><td class="label">Patient Email</td><td class="value">${email ? `<a href="mailto:${email}">${email}</a>` : "Not Provided"}</td></tr>
+            <tr><td class="label">Requested Care / Service</td><td class="value"><span class="badge">${treatment}</span></td></tr>
+            <tr><td class="label">Preferred Date</td><td class="value"><strong>${date}</strong></td></tr>
+            <tr><td class="label">Health Concerns / Notes</td><td class="value">${message || "None"}</td></tr>
+            <tr><td class="label">Submitted At</td><td class="value">${submissionTime} IST</td></tr>
+          </table>
+        </div>
+        <div class="footer">
+          This is a direct notification from <a href="${siteConfig.url}">Aayur Kendra Website</a>.
+        </div>
+      </div>
+    </body>
+    </html>
+    `;
+
+    let emailSent = false;
+
+    // Direct SMTP Email sending via Nodemailer
+    const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
+    const smtpPort = parseInt(process.env.SMTP_PORT || "465");
+    const smtpUser = process.env.SMTP_USER || process.env.GMAIL_USER || targetEmail;
+    const smtpPass = process.env.SMTP_PASS || process.env.GMAIL_APP_PASSWORD || "";
+
+    if (smtpPass) {
       try {
-        await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json",
+        const transporter = nodemailer.createTransport({
+          host: smtpHost,
+          port: smtpPort,
+          secure: smtpPort === 465,
+          auth: {
+            user: smtpUser,
+            pass: smtpPass,
           },
-          body: JSON.stringify({
-            access_key: accessKey,
-            subject: `[New Appointment Request] ${name} - ${treatment}`,
-            from_name: "Aayur Kendra Website",
-            to_email: targetEmail,
-            replyto: email || targetEmail,
-            "Patient Name": name,
-            "Phone Number": phone,
-            "Patient Email": email || "Not Provided",
-            "Requested Care / Therapy": treatment,
-            "Preferred Date": date,
-            "Health Concerns": message || "None",
-          }),
         });
+
+        await transporter.sendMail({
+          from: `"Aayur Kendra Website" <${smtpUser}>`,
+          to: targetEmail,
+          replyTo: email || targetEmail,
+          subject: `[New Appointment Request] ${name} - ${treatment}`,
+          html: htmlContent,
+        });
+
+        emailSent = true;
+        console.log("Appointment email dispatched directly via Nodemailer SMTP!");
       } catch (err) {
-        console.error("Web3Forms dispatch error:", err);
+        console.error("Nodemailer SMTP dispatch error:", err);
       }
+    } else {
+      console.log("SMTP_PASS / GMAIL_APP_PASSWORD not configured. Appointment logged successfully.");
     }
 
     return NextResponse.json({
       success: true,
-      message: `Enquiry processed for ${targetEmail}`,
+      delivered: emailSent,
+      message: emailSent
+        ? `Direct email sent successfully to ${targetEmail}`
+        : `Enquiry recorded for ${targetEmail}`,
     });
   } catch (error) {
     console.error("Appointment route error:", error);
@@ -83,3 +120,5 @@ export async function POST(request: Request) {
     );
   }
 }
+
+

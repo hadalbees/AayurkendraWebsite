@@ -4,6 +4,7 @@ import { use, useState } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { specialitiesData } from "@/data/specialities";
+import { doctorsData } from "@/data/doctors";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingWidgets from "@/components/ui/FloatingWidgets";
@@ -30,6 +31,10 @@ export default function SpecialityDetailPage({
   if (!speciality) {
     notFound();
   }
+
+  // Find the consultant doctor dynamically
+  const docSlug = speciality.consultantSlug || "dr-geetha-jayapal";
+  const doctor = doctorsData.find((d) => d.slug === docSlug);
 
   const [activeTab, setActiveTab] = useState<"overview" | "conditions" | "benefits" | "process" | "faqs">("overview");
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -281,10 +286,12 @@ export default function SpecialityDetailPage({
                       Direct consultation
                     </span>
                     <h3 className="font-serif text-2xl font-bold">
-                      Consult with Dr. Geetha Jayapal
+                      Consult with {doctor?.name || "Dr. Geetha Jayapal"}
                     </h3>
                     <p className="text-xs text-brown-muted leading-relaxed font-light">
-                      Founder & Chief Consultant with 25+ years of Ayurvedic clinical excellence.
+                      {doctor?.slug === "dr-geetha-jayapal"
+                        ? "Founder & Chief Consultant with 25+ years of Ayurvedic clinical excellence."
+                        : `${doctor?.title} with ${doctor?.experience} of clinical experience.`}
                     </p>
                   </div>
 

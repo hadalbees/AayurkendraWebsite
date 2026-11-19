@@ -9,16 +9,15 @@ import { FadeIn } from "../ui/Motion";
 import SectionHeader from "../ui/SectionHeader";
 
 const therapyImages: Record<string, string> = {
-  "panchakarma": "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=800&auto=format&fit=crop",
-  "abhyangam": "https://images.unsplash.com/photo-1519823551278-64ac9283ca4e?q=80&w=800&auto=format&fit=crop",
-  "shirodhara": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop",
-  "takra-dhara": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
-  "pizhichil": "https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=800&auto=format&fit=crop",
-  "kizhi": "https://images.unsplash.com/photo-1519824141121-997672188db9?q=80&w=800&auto=format&fit=crop",
-  "nasya": "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop",
-  "basti": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop",
-  "virechana": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
-  "netra-tarpanam": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800&auto=format&fit=crop",
+  panchakarma: "/images/panchakarma.jpg",
+  abhyangam: "/images/abhyangam.jpeg",
+  shirodhara: "/images/shirodhara.jpeg",
+  "takra-dhara": "/images/takra-dhara.jpeg",
+  pizhichil: "/images/pizhichil.png",
+  kizhi: "/images/kizhi.jpg",
+  nasya: "/images/nasyam.jpeg",
+  basti: "/images/basti.jpeg",
+  virechana: "/images/virechana.png",
 };
 
 function formatDuration(duration: string) {
@@ -65,9 +64,11 @@ export default function TherapiesPreview() {
   }, [isHovered]);
 
   return (
-    <section id="therapies" className="section-padding bg-cream-bg relative border-t border-brown-dark/5">
+    <section
+      id="therapies"
+      className="section-padding bg-cream-bg relative border-t border-brown-dark/5"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <SectionHeader
@@ -77,7 +78,7 @@ export default function TherapiesPreview() {
             align="left"
             className="mb-0 max-w-2xl"
           />
-          
+
           <div className="flex items-center gap-4">
             <Link
               href="/therapies"
@@ -86,7 +87,7 @@ export default function TherapiesPreview() {
               View All Treatments
               <ArrowRight className="h-4 w-4" />
             </Link>
-            
+
             {/* Carousel Buttons */}
             <div className="hidden sm:flex items-center gap-2">
               <button
@@ -108,7 +109,7 @@ export default function TherapiesPreview() {
         </div>
 
         {/* Carousel Container */}
-        <div 
+        <div
           className="relative overflow-hidden"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
@@ -119,15 +120,18 @@ export default function TherapiesPreview() {
             style={{ scrollbarWidth: "none" }}
           >
             {therapiesData.map((therapy) => (
-              <div 
-                key={therapy.slug} 
+              <div
+                key={therapy.slug}
                 className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0 snap-start group"
               >
                 <div className="premium-card overflow-hidden h-full flex flex-col hover:-translate-y-1 transition-all duration-300">
                   {/* Therapy Image */}
                   <div className="relative h-48 w-full overflow-hidden bg-cream-muted">
                     <Image
-                      src={therapyImages[therapy.slug] || "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=800&auto=format&fit=crop"}
+                      src={
+                        therapyImages[therapy.slug] ||
+                        "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=800&auto=format&fit=crop"
+                      }
                       alt={therapy.title}
                       fill
                       sizes="(max-w-768px) 100vw, (max-w-1024px) 50vw, 33vw"
