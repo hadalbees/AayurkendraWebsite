@@ -31,7 +31,8 @@ export default function DoctorPreview() {
               Meet Our Founder
             </h2>
             <p className="text-sm font-light text-theme-fg/75 mt-2">
-              Leading holistic healthcare with compassion, clinical rigor, and 25+ years of Ayurvedic expertise.
+              Leading holistic healthcare with compassion, clinical rigor, and
+              25+ years of Ayurvedic expertise.
             </p>
           </FadeIn>
         </div>
@@ -53,8 +54,12 @@ export default function DoctorPreview() {
                 <p className="text-[10px] uppercase tracking-[0.2em] text-brown-accent font-bold mb-1">
                   {siteConfig.founder.qualification}
                 </p>
-                <h3 className="font-serif text-2xl font-bold">{siteConfig.founder.name}</h3>
-                <p className="text-sm text-cream-bg/80 font-light">{siteConfig.founder.title}</p>
+                <h3 className="font-serif text-2xl font-bold">
+                  {siteConfig.founder.name}
+                </h3>
+                <p className="text-sm text-cream-bg/80 font-light">
+                  {siteConfig.founder.title}
+                </p>
               </div>
             </div>
           </FadeIn>
@@ -79,14 +84,21 @@ export default function DoctorPreview() {
 
             <FadeIn direction="left" delay={0.25}>
               <p className="text-base font-light text-theme-fg/90 leading-relaxed">
-                {siteConfig.founder.name} is a distinguished Ayurvedic physician with over 25 years of clinical practice in South India. She founded Aayur Kendra to deliver authentic, hospital-grade Ayurveda — combining Panchakarma, integrated therapies, and personalized care plans for every patient.
+                {siteConfig.founder.name} is a distinguished Ayurvedic physician
+                with over 25 years of clinical practice in South India. She
+                founded Aayur Kendra to deliver authentic, hospital-grade
+                Ayurveda — combining Panchakarma, integrated therapies, and
+                personalized care plans for every patient.
               </p>
             </FadeIn>
 
             <FadeIn direction="left" delay={0.35}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {achievements.map((item) => (
-                  <div key={item} className="flex items-start space-x-2.5 text-sm font-light text-theme-fg/85">
+                  <div
+                    key={item}
+                    className="flex items-start space-x-2.5 text-sm font-light text-theme-fg/85"
+                  >
                     <Award className="h-4 w-4 text-brown-accent shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </div>
@@ -94,7 +106,11 @@ export default function DoctorPreview() {
               </div>
             </FadeIn>
 
-            <FadeIn direction="left" delay={0.45} className="flex flex-col sm:flex-row gap-3 pt-2">
+            <FadeIn
+              direction="left"
+              delay={0.45}
+              className="flex flex-col sm:flex-row gap-3 pt-2"
+            >
               <Link
                 href="/appointment"
                 className="inline-flex items-center justify-center space-x-2 bg-primary-green text-white font-medium px-6 py-3.5 rounded-full text-sm transition-all hover:shadow-lg"
@@ -111,8 +127,6 @@ export default function DoctorPreview() {
               </Link>
             </FadeIn>
           </div>
-
-          
         </div>
       </div>
     </section>

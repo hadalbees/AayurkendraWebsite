@@ -31,10 +31,19 @@ const galleryItems = [
   //demo
   {
     title: "South Indian Women Achievers Award",
-    category: "infrastructure",
+    category: "events",
     type: "photo",
+    image: "/images/siwaa-award.jpeg",
     description:
       "Received the South Indian Women Achievers Award from SIWAA in recognition of outstanding achievements, dedication, and contributions to professional growth and women’s empowerment.",
+  },
+  {
+    title: "Aesthetic Ayurveada Skin Treatment",
+    category: "treatments",
+    type: "photo",
+    image: "/images/Aesthetic_ayurveada_skin_treatment.png",
+    description:
+      "Rediscover your skin's natural beauty with the goodness of Ayurveda.Experience natural skin rejuvenation with Ayurvedic herbs and traditional techniques that nourish, refresh, and enhance your skin’s natural glow.",
   },
   // {
   //   title: "Hospital Main Entrance & Greenery",
@@ -227,9 +236,17 @@ export default function GalleryPage() {
                         className="aspect-[4/3] w-full"
                       /> */}
 
-                      <Image
+                      {/* <Image
                         src="/images/siwaa-award.jpeg"
                         alt="South Indian Women Achievers Award"
+                        width={600}
+                        height={450}
+                        className="aspect-[4/3] w-full object-cover"
+                      /> */}
+
+                      <Image
+                        src={item.image}
+                        alt={item.title}
                         width={600}
                         height={450}
                         className="aspect-[4/3] w-full object-cover"
